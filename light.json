@@ -1,0 +1,17 @@
+{
+    "fullNotes": "I. PRODUCTION & PROPAGATION\n   - Sound is a longitudinal mechanical wave produced by vibrations.\n   - It requires a medium (Solid, Liquid, or Gas) to travel. It CANNOT travel in a vacuum.\n\nII. CHARACTERISTICS\n   - Pitch: Depends on Frequency (High frequency = High pitch).\n   - Loudness: Depends on Amplitude (High amplitude = Loud sound).\n\nIII. ECHO & SONAR\n   - Echo: Reflection of sound. Minimum distance for an echo is ~17.2 meters.",
+    "questions": [
+        {
+            "q": "Through which medium does sound travel the fastest?",
+            "a": "Solids",
+            "options": ["Liquids", "Gases", "Vacuum"],
+            "explanation": "Particles in solids are packed closely together, allowing vibrations to transfer much more quickly than in fluids."
+        },
+        {
+            "q": "If you increase the frequency of a sound wave, what happens to the sound?",
+            "a": "The pitch becomes higher",
+            "options": ["The volume increases", "The speed decreases", "The pitch becomes lower"],
+            "explanation": "Frequency is directly proportional to pitch. Think of a whistle (high frequency) vs. a bass drum (low frequency). "
+        }
+    ]
+}

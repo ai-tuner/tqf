@@ -1,0 +1,89 @@
+{
+"fullNotes": "This is the full notepage",
+
+"questions": [
+  {
+    "q": "What is the distance from the center of a circle to its edge called?",
+    "a": "Radius",
+    "options": ["Diameter", "Circumference"],
+    "explanation": "The radius is the line segment from the center of a circle to any point on its boundary."
+  },
+  {
+    "q": "What is the distance across a circle passing through the center called?",
+    "a": "Diameter",
+    "options": ["Radius", "Circumference"],
+    "explanation": "The diameter is a line that passes through the center of the circle and connects two points on the circle."
+  },
+  {
+    "q": "What do we call the distance around a circle?",
+    "a": "Circumference",
+    "options": [ "Diameter", "Arc"],
+    "explanation": "The circumference is the total distance around the boundary of a circle."
+  },
+  {
+    "q": "What constant represents the ratio of a circle's circumference to its diameter?",
+    "a": "Pi",
+    "options": ["Euler's number", "Golden ratio"],
+    "explanation": "Pi (π) is the constant that represents the ratio of the circumference of a circle to its diameter."
+  },
+  {
+    "q": "What is the approximate value of Pi?",
+    "a": "3.14",
+    "options": ["2.71", "1.62"],
+    "explanation": "Pi is approximately equal to 3.14159, but it is commonly rounded to 3.14 for basic calculations."
+  },
+  {
+    "q": "Which formula is used to calculate the circumference of a circle?",
+    "a": "C = 2πr",
+    "options": ["A = πr²", "d = r²"],
+    "explanation": "The circumference of a circle can be calculated by multiplying 2, Pi, and the radius."
+  },
+  {
+    "q": "Which formula is used to calculate the area of a circle?",
+    "a": "A = πr²",
+    "options": ["C = 2πr", "A = 2πr"],
+    "explanation": "The area of a circle is found by multiplying Pi with the square of the radius."
+  },
+  {
+    "q": "If the radius of a circle is 7, what is the approximate circumference using π ≈ 3.14?",
+    "a": "43.96",
+    "options": ["21.98", "153.86"],
+    "explanation": "Using the formula C = 2πr, substituting r = 7 gives C = 2 × 3.14 × 7 = 43.96."
+  },
+  {
+    "q": "Why is Pi used when measuring the rim of a wheel?",
+    "a": "Because the rim forms a circle and its circumference depends on Pi.",
+    "options": [
+      "Because wheels are square",
+      "Because Pi measures weight"
+    ],
+    "explanation": "The distance around the wheel is the circumference of a circle, which is calculated using the formula C = 2πr."
+  },
+  {
+    "q": "Why do engineers use Pi when designing gears and rotating machines?",
+    "a": "Because the rim forms a circle and its circumference depends on Pi.",
+    "options": [
+      
+    ],
+    "explanation": "Many machine parts rotate in circular motion. Engineers use Pi to calculate distances, speeds, and rotations."
+  },
+  {
+    "q": "Why is Pi used when calculating the size of a pizza?",
+    "a": "Because a pizza is circular and its area uses Pi.",
+    "options": [
+      "Because pizza is square",
+      "Because Pi measures taste"
+    ],
+    "explanation": "The area of a pizza is found using the formula A = πr² because pizzas are circular."
+  },
+  {
+    "q": "Why is Pi used in medical imaging like CT scans?",
+    "a": "Because scanners rotate around the body and analyze circular cross-sections.",
+    "options": [
+      "Because bones are square",
+      "Because Pi measures blood pressure"
+    ],
+    "explanation": "CT scanners rotate around the body and compute circular slices, which involve Pi-based calculations."
+  }
+]
+}

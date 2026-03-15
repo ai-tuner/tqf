@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Quest Factor</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        /* --- PROFESSIONAL UI ARCHITECTURE --- */
+        * {
+            -webkit-tap-highlight-color: transparent;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        * {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        :root {
+            --primary: #e0e0e0;
+            --accent: #9e9e9e;
+            --bg: #121212;
+            --surface: #242424;
+            --glass: rgba(36, 36, 36, 0.95);
+            --text: #f5f5f5;
+            --text-muted: #757575;
+            --success: #d1d1d1;
+            --error: #424242;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* --- STABLE SIDEBAR --- */
+        #side-nav {
+            width: 110px;
+            flex-shrink: 0;
+            background: var(--surface);
+            border-right: 1px solid rgba(222, 222, 222, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto;
+            padding: 20px 5px;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 423px) {
+            #side-nav {
+                position: fixed;
+                left: -110px;
+                height: 100%;
+            }
+
+            #side-nav.mobile-open {
+                left: 0;
+            }
+
+            #mobile-menu-btn {
+                display: flex !important;
+            }
+        }
+
+        #mobile-menu-btn {
+            display: none;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            color: var(--bg);
+            border-radius: 50%;
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 0 5px var(--accent);
+        }
+
+        .nav-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 25px;
+        }
+
+        .nav-label {
+            font-size: 8px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .sidebar-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(175, 175, 175, 0.2);
+            color: var(--accent);
+            width: 85%;
+            padding: 10px 0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 10px;
+            font-weight: 700;
+            transition: 0.2s;
+            text-align: center;
+        }
+
+        .sidebar-btn:hover {
+            background: var(--bg);
+           
+        }
+
+        .sidebar-btn.gold {
+            border-color: rgba(175, 175, 175, 0.2);
+            color: var(--accent);
+        }
+
+        #brand {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #brand:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- SLIDE PANEL --- */
+        #slide-panel {
+            width: 0;
+            height: 100%;
+            background: var(--surface);
+            border-right: 0 solid var(--accent);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        #slide-panel.open {
+            width: 33%;
+            border-right-width: 1px;
+            padding: 40px 30px;
+        }
+
+        @media (max-width: 423px) {
+            #slide-panel.open {
+                position: fixed;
+                left: 0;
+                right: 0;
+                width: 100%;
+                z-index: 1200;
+            }
+        }
+
+        .ref-scroll-area {
+            flex-grow: 1;
+            overflow-y: auto;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            white-space: pre-wrap;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            max-height: 60vh;
+            /* Ensures it scrolls within the panel */
+        }
+
+        /* --- CONTENT AREA --- */
+        .content-wrapper {
+            flex-grow: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .main-container {
+            max-width: 800px;
+            margin: 40px auto;
+            width: 100%;
+            overflow-y: auto;
+            padding: 0 20px 100px;
+        }
+
+        @media (max-width: 423px) {
+            .question-card {
+                padding: 15px !important;
+            }
+
+            #menu-screen h1 {
+                font-size: 2.5rem !important;
+            }
+        }
+
+        #menu-screen {
+            position: absolute;
+            inset: 0;
+            background: var(--bg);
+            z-index: 1100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .question-card {
+            font-size: 1.5rem;
+            text-align: justify;
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-left: 8px solid var(--primary);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .opt-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            transition: 0.2s;
+            margin-bottom: 12px;
+            width: 100%;
+        }
+
+        .opt-btn.correct {
+            border-color: var(--text-muted);
+            color: var(--success);
+            background: rgba(215, 255, 208, 0.25);
+        }
+
+        .opt-btn.wrong {
+            border-color: var(--error);
+            color: var(--text-muted);
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--primary);
+            width: 0%;
+            transition: width 0.5s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        /* --- RECORD MODE --- */
+        body.record-mode #side-nav {
+            width: 60px;
+            padding: 20px 0;
+            border: none;
+            background: transparent;
+            left: 0 !important;
+        }
+
+        body.record-mode #side-nav .nav-section,
+        body.record-mode #side-nav .nav-label,
+        body.record-mode #side-nav #review-nav-btn,
+        body.record-mode #side-nav div:last-child {
+            display: none;
+        }
+
+        body.record-mode #mobile-menu-btn {
+            display: none !important;
+        }
+
+        .resonance {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                text-shadow: 0 0 5px var(--accent);
+            }
+
+            50% {
+                text-shadow: 0 0 20px var(--accent);
+            }
+
+            100% {
+                text-shadow: 0 0 5px var(--accent);
+            }
+        }
+    </style>
+</head>
+
+<body id="main-body">
+
+    <div id="mobile-menu-btn" onclick="toggleMobileNav()">☰</div>
+
+    <nav id="side-nav">
+        <div id="brand" onclick="toggleRecordUI()"
+            style="font-size: 1.8rem; font-weight: 900; color: var(--primary); margin-bottom: 30px;">TQ<span
+                style="color:var(--accent)">F</span></div>
+
+        <div class="nav-section">
+            <div class="nav-label">The Quest Factor</div>
+            <button class="sidebar-btn" onclick="toggleSlidePanel('library')">Questions</button>
+            <button id="rec-btn" class="sidebar-btn" onclick="toggleRecording()">Start Rec</button>
+            <button class="sidebar-btn gold" onclick="toggleRecordUI()">Hide Nav</button>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-label">Navigator</div>
+            <button class="sidebar-btn" onclick="prevQuestion()">Back</button>
+            <button class="sidebar-btn gold" onclick="showExplanation()">Hint</button>
+            <button class="sidebar-btn" onclick="nextQuestion()">Next</button>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-label">Reports</div>
+            <button class="sidebar-btn" onclick="toggleSlidePanel('notes')">📖 Notes</button>
+            <button class="sidebar-btn" onclick="markTime()">📍 Mark</button>
+            <button class="sidebar-btn gold" onclick="exportMasterPDF()">Save All</button>
+        </div>
+
+        <button id="review-nav-btn" class="sidebar-btn gold" style="display:none;" onclick="startReview()">Review</button>
+
+        <div style="margin-top: auto; text-align: center; padding-bottom: 10px;">
+            <div class="nav-label">Score</div>
+            <b id="score-val" style="color: var(--primary); font-size: 1.2rem;">0</b>
+        </div>
+    </nav>
+
+    <div id="slide-panel">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <h2 id="panel-title" style="color:var(--primary); margin:0;">Observations</h2>
+            <span style="cursor:pointer; color:var(--error); font-weight:bold;" onclick="toggleSlidePanel()">✕</span>
+        </div>
+
+        <div id="panel-notes-content">
+            <textarea id="session-notes"
+                style="width:100%; height:180px; background:var(--bg); color:white; border:1px solid var(--text-muted); border-radius:8px; padding:15px; resize:none; margin-bottom:25px;"
+                placeholder="Takeaways..."></textarea>
+            <div class="nav-label" style="margin-bottom:10px;">The Quest Factor - Report</div>
+            <div id="ref-feed" class="ref-scroll-area"></div>
+        </div>
+
+        <div id="panel-library-content" style="display:none; overflow-y: auto; flex-grow:1;">
+            <input type="text" id="panel-topic-search"
+                style="width:100%; padding:12px; background:var(--bg); border:1px solid var(--text-muted); color:var(--accent); border-radius:8px; margin-bottom:20px;"
+                placeholder="Find Questions..." oninput="filterTopics(true)">
+            <div id="panel-topic-grid" style="display:grid; gap:10px;"></div>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="progress-bar" id="p-bar"></div>
+
+        <div id="menu-screen">
+            <h1 style="color:var(--primary); font-size: 4rem; margin:0; text-align: center;">The <span
+                    style="color:var(--accent)">Quest </span>Factor</h1>
+            <p style="color:var(--text); letter-spacing:3px; margin-bottom:10px; text-align: center;">Why Do We Do What We Do?</p>
+            <p style="color:var(--text-muted); letter-spacing:3px; margin-bottom:40px; text-align: center; font-style: italic;">Exploring the questions behind our world.</p>
+            <input type="text" id="topic-search"
+                style="width:100%; max-width:400px; padding:15px; background:var(--surface); border:1px solid var(--text-muted); color:var(--accent); border-radius:8px; margin-bottom:20px;"
+                placeholder="Find Questions..." oninput="filterTopics()">
+            <div id="topic-grid" style="display:grid; gap:10px;"></div>
+        </div>
+
+        <div class="main-container" id="quiz-area">
+            <div id="dynamic-content"></div>
+        </div>
+    </div>
+
+    <script>
+        let allTopics = [], topicData = { questions: [], fullNotes: "" };
+        let currentIndex = 0, score = 0, startTime = null;
+        let recorder, stream, chunks = [];
+
+        window.onload = () => {
+            fetch('config.json').then(r => r.json()).then(d => {
+                allTopics = d.topics;
+                renderTopics(allTopics);
+                renderTopics(allTopics, true);
+            });
+        };
+
+        function renderTopics(topics, isPanel = false) {
+            const gridId = isPanel ? 'panel-topic-grid' : 'topic-grid';
+            const grid = document.getElementById(gridId);
+            grid.innerHTML = '';
+            topics.forEach(t => {
+                const div = document.createElement('div');
+                div.className = 'sidebar-btn';
+                div.style.width = isPanel ? '100%' : '300px';
+                div.style.fontSize = isPanel ? '0.8rem' : '1rem';
+                div.innerText = t.title;
+                div.onclick = () => {
+                    loadTopic(t.file);
+                    startTime = new Date();
+                    document.getElementById('menu-screen').style.display = 'none';
+                    if (isPanel) toggleSlidePanel();
+                    if (document.getElementById('side-nav').classList.contains('mobile-open')) toggleMobileNav();
+                };
+                grid.appendChild(div);
+            });
+        }
+
+        function filterTopics(isPanel = false) {
+            const inputId = isPanel ? 'panel-topic-search' : 'topic-search';
+            const q = document.getElementById(inputId).value.toLowerCase();
+            const filtered = allTopics.filter(t => t.title.toLowerCase().includes(q));
+            renderTopics(filtered, isPanel);
+        }
+
+        function loadTopic(file) {
+            fetch(file).then(r => r.json()).then(d => {
+                topicData = d;
+                topicData.questions.forEach(q => {
+                    q.solved = false; q.userSelection = null;
+                    q.shuffled = [q.a, ...q.options].sort(() => Math.random() - 0.5);
+                });
+                document.getElementById('ref-feed').innerText = topicData.fullNotes;
+                currentIndex = 0; score = 0; // RESET STATE
+                document.getElementById('score-val').innerText = score;
+                document.getElementById('review-nav-btn').style.display = 'none';
+                loadQuestion();
+            });
+        }
+
+        async function typeWriter(el, text, speed) {
+            el.innerHTML = "";
+            for (let char of text) {
+                el.innerHTML += char;
+                await new Promise(r => setTimeout(r, speed));
+            }
+        }
+
+        async function loadQuestion() {
+            const q = topicData.questions[currentIndex];
+            const area = document.getElementById('dynamic-content');
+            area.innerHTML = `<div class="question-card" id="q-text"></div><div id="options-box"></div><div id="exp-box" style="display:none; margin-top:20px; color:var(--success); background:rgba(215, 255, 208, 0.25); padding:15px; border-radius:15px; font-size:1.2rem; font-style:italic; border-right:8px solid var(--accent);"></div>`;
+
+            await typeWriter(document.getElementById('q-text'), q.q, 20);
+            const optBox = document.getElementById('options-box');
+            for (let opt of q.shuffled) {
+                const btn = document.createElement('button');
+                btn.className = 'opt-btn';
+                optBox.appendChild(btn);
+                await typeWriter(btn, opt, 10);
+                btn.onclick = () => handleAnswer(btn, opt, q);
+            }
+            document.getElementById('p-bar').style.width = `${((currentIndex + 1) / topicData.questions.length) * 100}%`;
+            if (currentIndex === topicData.questions.length - 1) document.getElementById('review-nav-btn').style.display = 'block';
+        }
+
+        function handleAnswer(btn, opt, q) {
+            if (q.solved) return;
+            q.userSelection = opt;
+            if (opt === q.a) {
+                btn.classList.add('correct'); q.solved = true; score += 10;
+                document.getElementById('brand').classList.add('resonance');
+                setTimeout(() => document.getElementById('brand').classList.remove('resonance'), 1000);
+                showExplanation();
+            } else {
+                btn.classList.add('wrong'); score -= 2;
+            }
+            document.getElementById('score-val').innerText = score;
+        }
+
+        function showExplanation() {
+            const q = topicData.questions[currentIndex];
+            const exp = document.getElementById('exp-box');
+            if (exp) { exp.style.display = 'block'; exp.innerText = q.explanation; }
+        }
+
+        function exportMasterPDF() {
+            const { jsPDF } = window.jspdf; const doc = new jsPDF(); let y = 20;
+            doc.setFontSize(18); doc.text("aTTune Session Report", 20, y); y += 15;
+            doc.setFontSize(14); doc.text("Session Notes:", 20, y); y += 10;
+            doc.setFontSize(10); const notes = doc.splitTextToSize(document.getElementById('session-notes').value || "No notes recorded.", 170);
+            doc.text(notes, 20, y); y += (notes.length * 5) + 10;
+            doc.setFontSize(14); doc.text("Reference Material:", 20, y); y += 10;
+            const ref = doc.splitTextToSize(topicData.fullNotes, 170);
+            doc.text(ref, 20, y); y += (ref.length * 5) + 15;
+            if (y > 250) { doc.addPage(); y = 20; }
+            doc.setFontSize(14); doc.text("Quiz Review:", 20, y); y += 10;
+            topicData.questions.forEach((q, i) => {
+                doc.setFontSize(10); doc.text(`Q${i + 1}: ${q.q}`, 20, y); y += 5;
+                doc.text(`Your Ans: ${q.userSelection || 'N/A'} | Correct: ${q.a}`, 25, y); y += 10;
+                if (y > 270) { doc.addPage(); y = 20; }
+            });
+            doc.save('TQF.pdf');
+        }
+
+        async function toggleRecording() {
+            const btn = document.getElementById('rec-btn');
+            if (!recorder || recorder.state === 'inactive') {
+                try {
+                    stream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
+                    recorder = new MediaRecorder(stream); chunks = [];
+                    recorder.ondataavailable = e => chunks.push(e.data);
+                    recorder.onstop = () => {
+                        const blob = new Blob(chunks, { type: 'video/webm' });
+                        const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+                        a.download = `TQF_Session.webm`; a.click();
+                        btn.innerText = "Start Rec";
+                    };
+                    recorder.start(); btn.innerText = "STOP REC";
+                } catch (e) { console.error("Screen capture failed."); }
+            } else { recorder.stop(); stream.getTracks().forEach(t => t.stop()); }
+        }
+
+        function markTime() {
+            if (!startTime) return;
+            const diff = new Date() - startTime;
+            const time = `${Math.floor(diff / 60000)}:${String(Math.floor((diff % 60000) / 1000)).padStart(2, '0')}`;
+            document.getElementById('session-notes').value += `\n[${time}] Question ${currentIndex + 1}`;
+        }
+
+        function toggleSlidePanel(mode) {
+            const panel = document.getElementById('slide-panel');
+            const notesContent = document.getElementById('panel-notes-content');
+            const libraryContent = document.getElementById('panel-library-content');
+            const title = document.getElementById('panel-title');
+            if (mode === 'library') {
+                title.innerText = "Library"; notesContent.style.display = 'none'; libraryContent.style.display = 'block'; panel.classList.add('open');
+            } else if (mode === 'notes') {
+                title.innerText = "Notes"; libraryContent.style.display = 'none'; notesContent.style.display = 'block'; panel.classList.add('open');
+            } else { panel.classList.toggle('open'); }
+        }
+
+        function toggleRecordUI() { document.body.classList.toggle('record-mode'); }
+        function toggleMobileNav() { document.getElementById('side-nav').classList.toggle('mobile-open'); }
+        function prevQuestion() { if (currentIndex > 0) { currentIndex--; loadQuestion(); } }
+        function nextQuestion() { if (currentIndex < topicData.questions.length - 1) { currentIndex++; loadQuestion(); } }
+
+        function startReview() {
+            let html = `<h2 style="color:var(--primary);">Session Review</h2>`;
+            topicData.questions.forEach((q, i) => {
+                html += `<div style="padding:20px 0; border-bottom:1px solid #233554;">
+                    <p><b>Q${i + 1}:</b> ${q.q}</p>
+                    <div style="color:${q.userSelection === q.a ? 'var(--success)' : 'var(--error)'}">Your Choice: ${q.userSelection || 'None'}</div>
+                    <div style="color:var(--success)">Correct: ${q.a}</div>
+                </div>`;
+            });
+            document.getElementById('dynamic-content').innerHTML = html;
+        }
+
+        document.addEventListener('dblclick', () => { if (document.body.classList.contains('record-mode')) toggleRecordUI(); });
+    </script>
+</body>
+
+</html>
