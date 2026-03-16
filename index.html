@@ -106,34 +106,61 @@
 
         }
 
-        .navigator {
-            max-width: 800px;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            gap: 8px;
-
+        .mobile-nav-wrapper {
             position: fixed;
-            bottom: 48px;
-            margin-top: 10px;
+            bottom: 0;
+            /* Align to the very bottom to act as a solid base */
+            left: 50%;
+            transform: translateX(-50%);
 
+            width: 100%;
+            /* Spans full width to hide content behind it */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Keeps the inner bars centered */
+            gap: 5px;
+
+            /* The "Hide" Logic */
+            background: var(--bg);
+            /* Solid white or slightly transparent */
+            backdrop-filter: blur(10px);
+            /* Blurs content behind for better readability */
+            padding: 5px 0 calc(5px + env(safe-area-inset-bottom));
+            /* Extra padding at bottom */
+            border-top: 1px solid rgba(175, 175, 175, 0.2);
+            /* Optional: adds definition */
+            z-index: 1000;
         }
 
+
+        .navigator,
         .navigator-tools {
+            width: 90%;
             max-width: 800px;
-            width: 100%;
             display: flex;
-            flex-direction: row;
+            justify-content: space-between;
+            /* Spreads buttons evenly */
             gap: 8px;
-
-            position: fixed;
-            bottom: 10px;
-
-
-
-
-
         }
+
+
+        #dynamic-content {
+            /* Adjust this value based on how tall your combined nav bars are */
+            /* Usually around 120px - 160px for two rows of buttons */
+            padding-bottom: 150px;
+        }
+
+        .sidebar-btn {
+            flex: 1;
+            /* Makes all buttons the same width */
+            white-space: nowrap;
+            /* Prevents text from wrapping inside buttons */
+            padding: 10px 5px;
+            /* ... your other styles ... */
+        }
+
+
 
         .nav-label {
             font-size: 8px;
@@ -149,7 +176,7 @@
             color: var(--accent);
             width: 85%;
             padding: 10px 0;
-            border-radius: 6px;
+            
             cursor: pointer;
             font-size: 10px;
             font-weight: 700;
@@ -260,8 +287,8 @@
         .question-card {
             font-size: 1.5rem;
             text-align: justify;
-            background: var(--surface);
-            border-radius: 16px;
+            background:rgba(215, 255, 208, 0.25);
+            border-left: 16px;
             padding: 15px;
             margin-bottom: 25px;
             border-left: 8px solid var(--primary);
@@ -272,7 +299,7 @@
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 10px;
-            border-radius: 10px;
+            
             cursor: pointer;
             text-align: left;
             color: var(--text-muted);
@@ -296,7 +323,7 @@
 
         .progress-bar {
             margin-top: 8px;
-            border: 1px solid grey;
+            
             height: 10px;
             background: rgba(215, 255, 208, 0.25);
             width: 0%;
@@ -390,7 +417,7 @@
 
         <div id="panel-notes-content">
             <textarea id="session-notes"
-                style="width:100%; height:180px; background:var(--bg); color:white; border:1px solid var(--text-muted); border-radius:8px; padding:15px; resize:none; margin-bottom:25px;"
+                style="width:100%; height:180px; background:var(--bg); color:white; border:1px solid var(--text-muted); padding:15px; resize:none; margin-bottom:25px;"
                 placeholder="Takeaways..."></textarea>
             <div class="nav-label" style="margin-bottom:10px;">The Quest Factor - Report</div>
             <div id="ref-feed" class="ref-scroll-area"></div>
@@ -398,7 +425,7 @@
 
         <div id="panel-library-content" style="display:none; overflow-y: auto; flex-grow:1;">
             <input type="text" id="panel-topic-search"
-                style="width:100%; padding:12px; background:var(--bg); border:1px solid var(--text-muted); color:var(--accent); border-radius:8px; margin-bottom:20px;"
+                style="width:100%; padding:12px; background:var(--bg); border:1px solid var(--text-muted); color:var(--accent); margin-bottom:20px;"
                 placeholder="Find Topics..." oninput="filterTopics(true)">
             <div id="panel-topic-grid" style="display:grid; gap:10px;"></div>
         </div>
@@ -416,7 +443,7 @@
                 style="color:var(--text-muted); letter-spacing:3px; margin-bottom:40px; text-align: center; font-style: italic;">
                 Exploring the questions behind our world.</p>
             <input type="text" id="topic-search"
-                style="width:100%; max-width:400px; padding:15px; background:var(--surface); border:1px solid var(--text-muted); color:var(--accent); border-radius:8px; margin-bottom:20px;"
+                style="width:100%; max-width:400px; padding:15px; background:var(--surface); border:1px solid var(--text-muted); color:var(--accent); margin-bottom:20px;"
                 placeholder="Find Topics..." oninput="filterTopics()">
             <div id="topic-grid" style="display:grid; gap:10px;"></div>
         </div>
@@ -424,18 +451,20 @@
         <div class="main-container" id="quiz-area">
             <div id="dynamic-content"></div>
 
-            <div class="navigator">
-                <button class="sidebar-btn" onclick="prevQuestion()">Back</button>
-                <button class="sidebar-btn gold" onclick="showExplanation()">Hint</button>
-                <button class="sidebar-btn" onclick="nextQuestion()">Next</button>
+            <div class="mobile-nav-wrapper">
+                <div class="navigator">
+                    <button class="sidebar-btn" onclick="prevQuestion()">Back</button>
+                    <button class="sidebar-btn gold" onclick="showExplanation()">Hint</button>
+                    <button class="sidebar-btn" onclick="nextQuestion()">Next</button>
 
-            </div>
-            <div class="navigator-tools">
-                <button class="sidebar-btn" onclick="toggleSlidePanel('library')">Library</button>
-                <button class="sidebar-btn" onclick="toggleSlidePanel('notes')">Notes</button>
-                <button class="sidebar-btn gold" onclick="exportMasterPDF()">Save</button>
-                <button id="review-nav-btn" class="sidebar-btn gold" onclick="startReview()">Review</button>
-                <button id="rec-btn" class="sidebar-btn" onclick="toggleRecording()">Record</button>
+                </div>
+                <div class="navigator-tools">
+                    <button class="sidebar-btn" onclick="toggleSlidePanel('library')">Library</button>
+                    <button class="sidebar-btn" onclick="toggleSlidePanel('notes')">Notes</button>
+                    <button class="sidebar-btn gold" onclick="exportMasterPDF()">Save</button>
+                    <button id="review-nav-btn" class="sidebar-btn gold" onclick="startReview()">Review</button>
+                    <button id="rec-btn" class="sidebar-btn" onclick="toggleRecording()">Record</button>
+                </div>
             </div>
         </div>
     </div>
@@ -507,7 +536,7 @@
         async function loadQuestion() {
             const q = topicData.questions[currentIndex];
             const area = document.getElementById('dynamic-content');
-            area.innerHTML = `<div class="question-card" id="q-text"></div><div id="options-box"></div><div id="exp-box" style="display:none; margin-top:20px; color:var(--success); background:rgba(215, 255, 208, 0.25); padding:15px; border-radius:15px; font-size:1.2rem; font-style:italic; border-right:8px solid var(--accent);"></div>`;
+            area.innerHTML = `<div class="question-card" id="q-text"></div><div id="options-box"></div><div id="exp-box" style="display:none; margin-top:20px; color:var(--success); background:rgba(215, 255, 208, 0.25); padding:15px; font-size:1.2rem; font-style:italic; border-right:8px solid var(--accent);"></div>`;
 
             await typeWriter(document.getElementById('q-text'), q.q, 60);
             const optBox = document.getElementById('options-box');
