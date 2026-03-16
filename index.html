@@ -52,7 +52,7 @@
             flex-shrink: 0;
             background: var(--surface);
             border-right: 1px solid rgba(222, 222, 222, 0.2);
-            display: flex;
+            display: none;
             flex-direction: column;
             align-items: center;
             overflow-y: auto;
@@ -74,7 +74,7 @@
             }
 
             #mobile-menu-btn {
-                display: flex !important;
+                display: none !important;
             }
         }
 
@@ -98,11 +98,41 @@
 
         .nav-section {
             width: 100%;
-            display: flex;
+            display: none;
             flex-direction: column;
             align-items: center;
             gap: 6px;
             margin-bottom: 25px;
+
+        }
+
+        .navigator {
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+
+            position: fixed;
+            bottom: 48px;
+            margin-top: 10px;
+
+        }
+
+        .navigator-tools {
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+
+            position: fixed;
+            bottom: 10px;
+
+
+
+
+
         }
 
         .nav-label {
@@ -129,7 +159,7 @@
 
         .sidebar-btn:hover {
             background: var(--bg);
-           
+
         }
 
         .sidebar-btn.gold {
@@ -265,8 +295,10 @@
         }
 
         .progress-bar {
-            height: 4px;
-            background: var(--primary);
+            margin-top: 8px;
+            border: 1px solid grey;
+            height: 10px;
+            background: rgba(215, 255, 208, 0.25);
             width: 0%;
             transition: width 0.5s;
             position: absolute;
@@ -318,11 +350,11 @@
 
 <body id="main-body">
 
-    <div id="mobile-menu-btn" onclick="toggleMobileNav()">☰</div>
+    <div id="mobile-menu-btn" onclick="toggleMobileNav()">QF</div>
 
     <nav id="side-nav">
         <div id="brand" onclick="toggleRecordUI()"
-            style="font-size: 1.8rem; font-weight: 900; color: var(--primary); margin-bottom: 30px;">TQ<span
+            style="font-size: 1.2rem; font-weight: 100; color: var(--primary); margin-bottom: 30px;">TQ<span
                 style="color:var(--accent)">F</span></div>
 
         <div class="nav-section">
@@ -332,12 +364,7 @@
             <button class="sidebar-btn gold" onclick="toggleRecordUI()">Hide Nav</button>
         </div>
 
-        <div class="nav-section">
-            <div class="nav-label">Navigator</div>
-            <button class="sidebar-btn" onclick="prevQuestion()">Back</button>
-            <button class="sidebar-btn gold" onclick="showExplanation()">Hint</button>
-            <button class="sidebar-btn" onclick="nextQuestion()">Next</button>
-        </div>
+
 
         <div class="nav-section">
             <div class="nav-label">Reports</div>
@@ -346,7 +373,8 @@
             <button class="sidebar-btn gold" onclick="exportMasterPDF()">Save All</button>
         </div>
 
-        <button id="review-nav-btn" class="sidebar-btn gold" style="display:none;" onclick="startReview()">Review</button>
+        <button id="review-nav-btn" class="sidebar-btn gold" style="display:none;"
+            onclick="startReview()">Review</button>
 
         <div style="margin-top: auto; text-align: center; padding-bottom: 10px;">
             <div class="nav-label">Score</div>
@@ -371,7 +399,7 @@
         <div id="panel-library-content" style="display:none; overflow-y: auto; flex-grow:1;">
             <input type="text" id="panel-topic-search"
                 style="width:100%; padding:12px; background:var(--bg); border:1px solid var(--text-muted); color:var(--accent); border-radius:8px; margin-bottom:20px;"
-                placeholder="Find Questions..." oninput="filterTopics(true)">
+                placeholder="Find Topics..." oninput="filterTopics(true)">
             <div id="panel-topic-grid" style="display:grid; gap:10px;"></div>
         </div>
     </div>
@@ -382,16 +410,33 @@
         <div id="menu-screen">
             <h1 style="color:var(--primary); font-size: 4rem; margin:0; text-align: center;">The <span
                     style="color:var(--accent)">Quest </span>Factor</h1>
-            <p style="color:var(--text); letter-spacing:3px; margin-bottom:10px; text-align: center;">Why Do We Do What We Do?</p>
-            <p style="color:var(--text-muted); letter-spacing:3px; margin-bottom:40px; text-align: center; font-style: italic;">Exploring the questions behind our world.</p>
+            <p style="color:var(--text); letter-spacing:3px; margin-bottom:10px; text-align: center;">Why Do We Do What
+                We Do?</p>
+            <p
+                style="color:var(--text-muted); letter-spacing:3px; margin-bottom:40px; text-align: center; font-style: italic;">
+                Exploring the questions behind our world.</p>
             <input type="text" id="topic-search"
                 style="width:100%; max-width:400px; padding:15px; background:var(--surface); border:1px solid var(--text-muted); color:var(--accent); border-radius:8px; margin-bottom:20px;"
-                placeholder="Find Questions..." oninput="filterTopics()">
+                placeholder="Find Topics..." oninput="filterTopics()">
             <div id="topic-grid" style="display:grid; gap:10px;"></div>
         </div>
 
         <div class="main-container" id="quiz-area">
             <div id="dynamic-content"></div>
+
+            <div class="navigator">
+                <button class="sidebar-btn" onclick="prevQuestion()">Back</button>
+                <button class="sidebar-btn gold" onclick="showExplanation()">Hint</button>
+                <button class="sidebar-btn" onclick="nextQuestion()">Next</button>
+
+            </div>
+            <div class="navigator-tools">
+                <button class="sidebar-btn" onclick="toggleSlidePanel('library')">Library</button>
+                <button class="sidebar-btn" onclick="toggleSlidePanel('notes')">Notes</button>
+                <button class="sidebar-btn gold" onclick="exportMasterPDF()">Save</button>
+                <button id="review-nav-btn" class="sidebar-btn gold" onclick="startReview()">Review</button>
+                <button id="rec-btn" class="sidebar-btn" onclick="toggleRecording()">Record</button>
+            </div>
         </div>
     </div>
 
@@ -464,13 +509,13 @@
             const area = document.getElementById('dynamic-content');
             area.innerHTML = `<div class="question-card" id="q-text"></div><div id="options-box"></div><div id="exp-box" style="display:none; margin-top:20px; color:var(--success); background:rgba(215, 255, 208, 0.25); padding:15px; border-radius:15px; font-size:1.2rem; font-style:italic; border-right:8px solid var(--accent);"></div>`;
 
-            await typeWriter(document.getElementById('q-text'), q.q, 20);
+            await typeWriter(document.getElementById('q-text'), q.q, 60);
             const optBox = document.getElementById('options-box');
             for (let opt of q.shuffled) {
                 const btn = document.createElement('button');
                 btn.className = 'opt-btn';
                 optBox.appendChild(btn);
-                await typeWriter(btn, opt, 10);
+                await typeWriter(btn, opt, 60);
                 btn.onclick = () => handleAnswer(btn, opt, q);
             }
             document.getElementById('p-bar').style.width = `${((currentIndex + 1) / topicData.questions.length) * 100}%`;
@@ -497,23 +542,243 @@
             if (exp) { exp.style.display = 'block'; exp.innerText = q.explanation; }
         }
 
-        function exportMasterPDF() {
-            const { jsPDF } = window.jspdf; const doc = new jsPDF(); let y = 20;
-            doc.setFontSize(18); doc.text("aTTune Session Report", 20, y); y += 15;
-            doc.setFontSize(14); doc.text("Session Notes:", 20, y); y += 10;
-            doc.setFontSize(10); const notes = doc.splitTextToSize(document.getElementById('session-notes').value || "No notes recorded.", 170);
-            doc.text(notes, 20, y); y += (notes.length * 5) + 10;
-            doc.setFontSize(14); doc.text("Reference Material:", 20, y); y += 10;
-            const ref = doc.splitTextToSize(topicData.fullNotes, 170);
-            doc.text(ref, 20, y); y += (ref.length * 5) + 15;
-            if (y > 250) { doc.addPage(); y = 20; }
-            doc.setFontSize(14); doc.text("Quiz Review:", 20, y); y += 10;
-            topicData.questions.forEach((q, i) => {
-                doc.setFontSize(10); doc.text(`Q${i + 1}: ${q.q}`, 20, y); y += 5;
-                doc.text(`Your Ans: ${q.userSelection || 'N/A'} | Correct: ${q.a}`, 25, y); y += 10;
-                if (y > 270) { doc.addPage(); y = 20; }
+        async function exportMasterPDF() {
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF("p", "mm", "a4");
+
+            const margin = 20;
+            const pageWidth = doc.internal.pageSize.getWidth();
+            const pageHeight = doc.internal.pageSize.getHeight();
+            const contentWidth = pageWidth - margin * 2;
+
+            let y = margin;
+
+            const lineHeight = 1.6;
+
+            /* ---------------- HEADER ---------------- */
+
+            function header() {
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(14);
+                doc.text("Takeaways Learning Workbook", margin, 12);
+
+                doc.setFont("helvetica", "normal");
+                doc.setFontSize(9);
+                doc.text(new Date().toLocaleDateString(), pageWidth - 35, 12);
+
+                doc.setLineWidth(.3);
+                doc.line(margin, 15, pageWidth - margin, 15);
+            }
+
+            /* ---------------- FOOTER ---------------- */
+
+            function footer() {
+
+                const pages = doc.getNumberOfPages();
+
+                for (let i = 1; i <= pages; i++) {
+                    doc.setPage(i);
+                    doc.setFontSize(9);
+                    doc.text(
+                        `Page ${i} of ${pages}`,
+                        pageWidth / 2,
+                        pageHeight - 8,
+                        { align: "center" }
+                    );
+                }
+
+            }
+
+            /* ---------------- PAGE BREAK ---------------- */
+
+            function pageBreak(space = 10) {
+
+                if (y + space > pageHeight - 20) {
+                    doc.addPage();
+                    header();
+                    y = margin;
+                }
+
+            }
+
+            /* ---------------- TEXT BLOCK ---------------- */
+
+            function textBlock(text, size = 12, style = "normal", space = 8) {
+
+                doc.setFont("helvetica", style);
+                doc.setFontSize(size);
+
+                const lines = doc.splitTextToSize(text, contentWidth);
+
+                const spacing = size * 0.3528 * lineHeight;
+
+                lines.forEach(line => {
+                    pageBreak(spacing);
+                    doc.text(line, margin, y);
+                    y += spacing;
+                });
+
+                y += space;
+
+            }
+
+            /* ---------------- MATH RENDER ---------------- */
+
+            async function renderFormula(formula) {
+
+                const el = document.createElement("div");
+                el.style.position = "absolute";
+                el.style.left = "-9999px";
+                el.innerHTML = `\\(${formula}\\)`;
+                document.body.appendChild(el);
+
+                await MathJax.typesetPromise([el]);
+
+                const svg = el.querySelector("svg");
+                const data = new XMLSerializer().serializeToString(svg);
+
+                const canvas = document.createElement("canvas");
+                const ctx = canvas.getContext("2d");
+
+                const img = new Image();
+
+                return new Promise(resolve => {
+
+                    img.onload = function () {
+
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+
+                        ctx.drawImage(img, 0, 0);
+
+                        const url = canvas.toDataURL("image/png");
+
+                        pageBreak(30);
+
+                        doc.addImage(url, "PNG", margin, y, 60, 20);
+
+                        y += 25;
+
+                        document.body.removeChild(el);
+
+                        resolve();
+
+                    };
+
+                    img.src = 'data:image/svg+xml;base64,' + btoa(data);
+
+                });
+
+            }
+
+            /* ---------------- COVER PAGE ---------------- */
+
+            doc.setFontSize(26);
+            doc.setFont("helvetica", "bold");
+            doc.text("Takeaways Workbook", pageWidth / 2, 80, { align: "center" });
+
+            doc.setFontSize(14);
+            doc.setFont("helvetica", "normal");
+            doc.text("Learning Summary", pageWidth / 2, 95, { align: "center" });
+
+            doc.text(
+                `Generated: ${new Date().toLocaleDateString()}`,
+                pageWidth / 2,
+                110,
+                { align: "center" }
+            );
+
+            doc.addPage();
+
+            header();
+
+            y = margin + 10;
+
+            /* ---------------- SESSION NOTES ---------------- */
+
+            textBlock("Session Notes", 16, "bold", 4);
+
+            const notes = document.getElementById("session-notes").value
+                || "No notes recorded.";
+
+            textBlock(notes, 12, "normal", 10);
+
+            /* ---------------- REFERENCE MATERIAL ---------------- */
+
+            textBlock("Reference Material", 16, "bold", 4);
+
+            const ref = topicData.fullNotes || "";
+
+            textBlock(ref, 12, "normal", 10);
+
+            /* ---------------- SAMPLE FORMULA SUPPORT ---------------- */
+
+            if (topicData.formulas) {
+
+                textBlock("Key Formulas", 16, "bold", 6);
+
+                for (const f of topicData.formulas) {
+
+                    await renderFormula(f);
+
+                }
+
+            }
+
+            /* ---------------- QUIZ SUMMARY ---------------- */
+
+            textBlock("Quiz Summary", 16, "bold", 6);
+
+            let correct = 0;
+
+            topicData.questions.forEach(q => {
+                if (q.userSelection === q.a) correct++;
             });
-            doc.save('TQF.pdf');
+
+            const total = topicData.questions.length;
+
+            const percent = Math.round((correct / total) * 100);
+
+            textBlock(
+                `Score: ${correct} / ${total}  |  Accuracy: ${percent}%`,
+                13,
+                "bold",
+                12
+            );
+
+            /* ---------------- QUIZ TABLE ---------------- */
+
+            textBlock("Quiz Review", 16, "bold", 6);
+
+            topicData.questions.forEach((q, i) => {
+
+                textBlock(`Question ${i + 1}`, 13, "bold", 2);
+
+                textBlock(q.q, 12, "normal", 4);
+
+                textBlock(
+                    `Your Answer: ${q.userSelection || "Not Answered"}`,
+                    11,
+                    "normal",
+                    2
+                );
+
+                textBlock(
+                    `Correct Answer: ${q.a}`,
+                    11,
+                    "bold",
+                    8
+                );
+
+            });
+
+            /* ---------------- FOOTER ---------------- */
+
+            footer();
+
+            doc.save("TQF_Workbook.pdf");
+
         }
 
         async function toggleRecording() {
