@@ -1,0 +1,77 @@
+{
+  "fullNotes": "Magnetic forces are non-contact forces created by the motion of electric charges. Every magnet has a North and South pole where the force is strongest. The space around a magnet where these forces act is called a magnetic field. Like poles repel each other, while opposite poles attract. The Earth itself acts as a giant bar magnet, which is why compasses function. The strength of a magnetic force on a moving charge is determined by the formula F = qvB sin(θ).",
+  "questions": [
+    {
+      "q": "What are the two points on a magnet where the magnetic force is the strongest?",
+      "a": "Poles",
+      "options": ["Axles", "Equators"],
+      "explanation": "Magnetic force is concentrated at the ends of a magnet, known as the North and South poles."
+    },
+    {
+      "q": "What happens when the North pole of one magnet is brought near the North pole of another?",
+      "a": "They repel each other",
+      "options": ["They attract each other", "Nothing happens"],
+      "explanation": "In magnetism, like poles (North-North or South-South) exert a repulsive force on one another."
+    },
+    {
+      "q": "What is the region around a magnet where magnetic forces can be detected?",
+      "a": "Magnetic field",
+      "options": ["Electric zone", "Vacuum space"],
+      "explanation": "A magnetic field is the area surrounding a magnetic material or a moving electric charge within which the force of magnetism acts."
+    },
+    {
+      "q": "In which direction do magnetic field lines conventionally point outside a magnet?",
+      "a": "North to South",
+      "options": ["South to North", "East to West"],
+      "explanation": "By convention, magnetic field lines are drawn exiting the North pole and entering the South pole."
+    },
+    {
+      "q": "What core material is most commonly used to make strong permanent magnets?",
+      "a": "Iron",
+      "options": ["Aluminum", "Copper"],
+      "explanation": "Iron, along with nickel and cobalt, is a ferromagnetic material, meaning it can be permanently magnetized."
+    },
+    {
+      "q": "What happens to a magnet if it is broken in half?",
+      "a": "It becomes two smaller magnets, each with a North and South pole.",
+      "options": ["One half is North and the other is South", "It loses its magnetism"],
+      "explanation": "Magnetic monopoles do not exist in nature; breaking a magnet simply creates two new dipoles."
+    },
+    {
+      "q": "Which device uses a small magnetic needle to determine direction?",
+      "a": "Compass",
+      "options": ["Barometer", "Thermometer"],
+      "explanation": "A compass needle is a small magnet that aligns itself with the Earth's magnetic field."
+    },
+    {
+      "q": "What creates a magnetic field around a wire?",
+      "a": "An electric current flowing through it",
+      "options": ["The color of the wire", "Static air"],
+      "explanation": "Moving electric charges (current) generate a magnetic field, a principle used in electromagnets."
+    },
+    {
+      "q": "What is the SI unit for magnetic field strength?",
+      "a": "Tesla",
+      "options": ["Newton", "Watt"],
+      "explanation": "The Tesla (T) is the standard unit used to measure the intensity of a magnetic field."
+    },
+    {
+      "q": "Why do maglev trains float above the tracks?",
+      "a": "Because of magnetic repulsion between the train and the track.",
+      "options": ["Because they are filled with helium", "Because of high wind speeds"],
+      "explanation": "Maglev (magnetic levitation) trains use powerful electromagnets to repel the train upward, eliminating friction."
+    },
+    {
+      "q": "How does the Earth's magnetic field protect life on our planet?",
+      "a": "By deflecting harmful solar radiation and charged particles.",
+      "options": ["By keeping the moon in orbit", "By creating gravity"],
+      "explanation": "The magnetosphere acts as a shield, redirecting the solar wind away from the atmosphere."
+    },
+    {
+      "q": "Why are electromagnets used in junkyards to lift cars?",
+      "a": "Because their magnetism can be turned on and off with electricity.",
+      "options": ["Because they are cheaper than glue", "Because they only pick up red cars"],
+      "explanation": "The ability to control the magnetic force by toggling the electric current makes electromagnets ideal for lifting and releasing heavy metal objects."
+    }
+  ]
+}
