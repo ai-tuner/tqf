@@ -1,0 +1,20 @@
+{
+  "name": "The Quest Factor",
+  "short_name": "TQF",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "rgba(215, 255, 208, 0.25);",
+  "theme_color": "rgba(215, 255, 208, 0.25);",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
