@@ -3,8 +3,8 @@
   "short_name": "TQF",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "rgba(215, 255, 208, 0.25);",
-  "theme_color": "rgba(215, 255, 208, 0.25);",
+  "background_color": "#ffffff",
+  "theme_color": "#0d6efd",
   "icons": [
     {
       "src": "icon-192.png",
