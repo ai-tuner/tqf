@@ -1,77 +1,77 @@
 {
-  "fullNotes": "A diode is a semiconductor device that primarily allows current to flow in one direction. It is created by joining P-type (positive) and N-type (negative) semiconductor materials. At the junction, electrons and holes recombine to create a depletion region, which acts as a barrier. For a silicon diode to conduct, it typically requires a forward bias voltage of approximately 0.7V. Diodes are essential for rectification, signal modulation, and voltage regulation.",
+  "fullNotes": "Magnetic forces are non-contact forces created by the motion of electric charges. Every magnet has a North and South pole where the force is strongest. The space around a magnet where these forces act is called a magnetic field. Like poles repel each other, while opposite poles attract. The Earth itself acts as a giant bar magnet, which is why compasses function. The strength of a magnetic force on a moving charge is determined by the formula F = qvB sin(θ).",
   "questions": [
     {
-      "q": "Which two types of semiconductor materials are joined to create a basic diode?",
-      "a": "P-type and N-type",
-      "options": ["Positive and Neutral", "Active and Passive"],
-      "explanation": "A diode is formed by a P-N junction, where 'P' stands for positive (holes) and 'N' stands for negative (electrons)."
+      "q": "What are the two points on a magnet where the magnetic force is the strongest?",
+      "a": "Poles",
+      "options": ["Axles", "Equators"],
+      "explanation": "Magnetic force is concentrated at the ends of a magnet, known as the North and South poles."
     },
     {
-      "q": "What is the name of the insulating layer that forms at the junction of a diode?",
-      "a": "Depletion region",
-      "options": ["Conduction zone", "Neutral territory"],
-      "explanation": "The depletion region is an area near the junction where mobile charge carriers have been diffused, creating a barrier to current."
+      "q": "What happens when the North pole of one magnet is brought near the North pole of another?",
+      "a": "They repel each other",
+      "options": ["They attract each other", "Nothing happens"],
+      "explanation": "In magnetism, like poles (North-North or South-South) exert a repulsive force on one another."
     },
     {
-      "q": "What is the typical forward bias voltage required for a Silicon diode to conduct?",
-      "a": "0.7V",
-      "options": ["0.3V", "1.5V"],
-      "explanation": "Silicon diodes generally require about 0.7 Volts to overcome the internal barrier potential, while Germanium diodes require about 0.3V."
+      "q": "What is the region around a magnet where magnetic forces can be detected?",
+      "a": "Magnetic field",
+      "options": ["Electric zone", "Vacuum space"],
+      "explanation": "A magnetic field is the area surrounding a magnetic material or a moving electric charge within which the force of magnetism acts."
     },
     {
-      "q": "What is the process of converting AC (Alternating Current) to DC (Direct Current) using diodes called?",
-      "a": "Rectification",
-      "options": ["Amplification", "Oscillation"],
-      "explanation": "Because diodes only allow current to flow in one direction, they are used in rectifier circuits to turn AC into a steady DC pulse."
+      "q": "In which direction do magnetic field lines conventionally point outside a magnet?",
+      "a": "North to South",
+      "options": ["South to North", "East to West"],
+      "explanation": "By convention, magnetic field lines are drawn exiting the North pole and entering the South pole."
     },
     {
-      "q": "In a diode symbol, what does the 'arrow' part represent?",
-      "a": "The Anode",
-      "options": ["The Cathode", "The Ground"],
-      "explanation": "In a schematic, the triangle (arrow) is the Anode (positive side), and the flat line is the Cathode (negative side)."
+      "q": "What core material is most commonly used to make strong permanent magnets?",
+      "a": "Iron",
+      "options": ["Aluminum", "Copper"],
+      "explanation": "Iron, along with nickel and cobalt, is a ferromagnetic material, meaning it can be permanently magnetized."
     },
     {
-      "q": "What happens when a diode is 'Reverse Biased'?",
-      "a": "It blocks current flow.",
-      "options": ["It amplifies the signal.", "It changes the voltage to zero."],
-      "explanation": "In reverse bias, the positive terminal is connected to the N-type material, widening the depletion region and preventing current."
+      "q": "What happens to a magnet if it is broken in half?",
+      "a": "It becomes two smaller magnets, each with a North and South pole.",
+      "options": ["One half is North and the other is South", "It loses its magnetism"],
+      "explanation": "Magnetic monopoles do not exist in nature; breaking a magnet simply creates two new dipoles."
     },
     {
-      "q": "What is 'Doping' in the context of diode design?",
-      "a": "Adding impurities to a semiconductor to change its conductivity.",
-      "options": ["Cleaning the silicon wafers", "Coating the diode in plastic"],
-      "explanation": "Doping introduces atoms like Phosphorus or Boron into Silicon to create an excess of electrons or holes."
+      "q": "Which device uses a small magnetic needle to determine direction?",
+      "a": "Compass",
+      "options": ["Barometer", "Thermometer"],
+      "explanation": "A compass needle is a small magnet that aligns itself with the Earth's magnetic field."
     },
     {
-      "q": "Which specific type of diode is designed to operate safely in the 'Breakdown Region'?",
-      "a": "Zener Diode",
-      "options": ["LED", "Schottky Diode"],
-      "explanation": "Zener diodes are specially designed to allow current to flow backward when a specific 'Zener voltage' is reached, making them great for voltage regulation."
+      "q": "What creates a magnetic field around a wire?",
+      "a": "An electric current flowing through it",
+      "options": ["The color of the wire", "Static air"],
+      "explanation": "Moving electric charges (current) generate a magnetic field, a principle used in electromagnets."
     },
     {
-      "q": "Why is a 'Schottky Diode' often used in high-speed switching applications?",
-      "a": "It has a lower forward voltage drop and faster switching speed.",
-      "options": ["Because it is larger", "Because it uses more power"],
-      "explanation": "Schottky diodes use a metal-semiconductor junction, which allows them to switch on and off much faster than standard P-N junction diodes."
+      "q": "What is the SI unit for magnetic field strength?",
+      "a": "Tesla",
+      "options": ["Newton", "Watt"],
+      "explanation": "The Tesla (T) is the standard unit used to measure the intensity of a magnetic field."
     },
     {
-      "q": "What is the primary purpose of a 'Photodiode'?",
-      "a": "To convert light into an electrical current.",
-      "options": ["To emit bright light", "To store electricity"],
-      "explanation": "Photodiodes are designed to be light-sensitive; when photons hit the junction, they create electron-hole pairs, generating current."
+      "q": "Why do maglev trains float above the tracks?",
+      "a": "Because of magnetic repulsion between the train and the track.",
+      "options": ["Because they are filled with helium", "Because of high wind speeds"],
+      "explanation": "Maglev (magnetic levitation) trains use powerful electromagnets to repel the train upward, eliminating friction."
     },
     {
-      "q": "Why is thermal management important in diode design?",
-      "a": "Excess heat can increase leakage current and lead to thermal runaway.",
-      "options": ["Heat makes the diode turn blue", "Heat turns the diode into a wire"],
-      "explanation": "As diodes get hotter, their resistance decreases, which can cause more current to flow, creating even more heat until the device fails."
+      "q": "How does the Earth's magnetic field protect life on our planet?",
+      "a": "By deflecting harmful solar radiation and charged particles.",
+      "options": ["By keeping the moon in orbit", "By creating gravity"],
+      "explanation": "The magnetosphere acts as a shield, redirecting the solar wind away from the atmosphere."
     },
     {
-      "q": "In a Bridge Rectifier, how many diodes are typically used?",
-      "a": "Four",
-      "options": ["Two", "One"],
-      "explanation": "A full-wave bridge rectifier uses four diodes arranged in a specific pattern to convert both halves of an AC cycle into DC."
+      "q": "Why are electromagnets used in junkyards to lift cars?",
+      "a": "Because their magnetism can be turned on and off with electricity.",
+      "options": ["Because they are cheaper than glue", "Because they only pick up red cars"],
+      "explanation": "The ability to control the magnetic force by toggling the electric current makes electromagnets ideal for lifting and releasing heavy metal objects."
     }
   ]
 }
