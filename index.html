@@ -33,7 +33,7 @@
             --text: #f5f5f5;
             --text-muted: #757575;
             --success: #d1d1d1;
-            --error: #424242;
+            --error: #424242; 
         }
 
         body {
@@ -103,36 +103,24 @@
             align-items: center;
             gap: 6px;
             margin-bottom: 25px;
-
         }
 
         .mobile-nav-wrapper {
             position: fixed;
             bottom: 0;
-            /* Align to the very bottom to act as a solid base */
             left: 50%;
             transform: translateX(-50%);
-
             width: 100%;
-            /* Spans full width to hide content behind it */
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* Keeps the inner bars centered */
             gap: 5px;
-
-            /* The "Hide" Logic */
             background: var(--bg);
-            /* Solid white or slightly transparent */
             backdrop-filter: blur(10px);
-            /* Blurs content behind for better readability */
             padding: 5px 0 calc(5px + env(safe-area-inset-bottom));
-            /* Extra padding at bottom */
             border-top: 1px solid rgba(175, 175, 175, 0.2);
-            /* Optional: adds definition */
             z-index: 1000;
         }
-
 
         .navigator,
         .navigator-tools {
@@ -140,58 +128,43 @@
             max-width: 800px;
             display: flex;
             justify-content: space-between;
-            /* Spreads buttons evenly */
             gap: 8px;
         }
 
-
         #dynamic-content {
-            /* Adjust this value based on how tall your combined nav bars are */
-            /* Usually around 120px - 160px for two rows of buttons */
             padding-bottom: 150px;
         }
 
         .sidebar-btn {
             flex: 1;
-            /* Makes all buttons the same width */
             white-space: nowrap;
-            /* Prevents text from wrapping inside buttons */
             padding: 10px 5px;
-            /* ... your other styles ... */
-        }
-
-
-
-        .nav-label {
-            font-size: 8px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            font-weight: 800;
-            text-align: center;
-        }
-
-        .sidebar-btn {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(175, 175, 175, 0.2);
             color: var(--accent);
             width: 85%;
-            padding: 10px 0;
-            
             cursor: pointer;
-            font-size: 10px;
-            font-weight: 700;
+            font-size: 12px;
+            font-weight: 600;
             transition: 0.2s;
             text-align: center;
         }
 
         .sidebar-btn:hover {
             background: var(--bg);
-
         }
 
         .sidebar-btn.gold {
             border-color: rgba(175, 175, 175, 0.2);
             color: var(--accent);
+        }
+
+        .nav-label {
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 800;
+            text-align: center;
         }
 
         #brand {
@@ -237,12 +210,11 @@
             overflow-y: auto;
             font-size: 0.9rem;
             line-height: 1.6;
-            color: var(--text-muted);
+            color: #a1a1a1;
             white-space: pre-wrap;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 20px;
             max-height: 60vh;
-            /* Ensures it scrolls within the panel */
         }
 
         /* --- CONTENT AREA --- */
@@ -262,16 +234,6 @@
             padding: 0 20px 100px;
         }
 
-        @media (max-width: 423px) {
-            .question-card {
-                padding: 15px !important;
-            }
-
-            #menu-screen h1 {
-                font-size: 2.5rem !important;
-            }
-        }
-
         #menu-screen {
             position: absolute;
             inset: 0;
@@ -287,8 +249,7 @@
         .question-card {
             font-size: 1.5rem;
             text-align: left;
-            background:rgba(215, 255, 208, 0.25);
-            border-left: 16px;
+            background: rgba(215, 255, 208, 0.25);
             padding: 15px;
             margin-bottom: 25px;
             border-left: 8px solid var(--primary);
@@ -299,7 +260,6 @@
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 10px;
-            
             cursor: pointer;
             text-align: left;
             color: var(--text-muted);
@@ -321,18 +281,34 @@
             background: rgba(239, 68, 68, 0.1);
         }
 
+        /* --- SEGMENTED PROGRESS BAR --- */
         .progress-bar {
             margin-top: 8px;
-            
             height: 10px;
-            background: rgba(215, 255, 208, 0.25);
-            width: 0%;
-            transition: width 0.5s;
+            width: 100%;
+            display: flex;
+            gap: 2px;
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             z-index: 100;
+        }
+
+        .progress-step {
+            flex: 1;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .progress-step.active {
+            background: var(--primary);
+        }
+
+        .progress-step.completed {
+            background: rgba(215, 255, 208, 0.6);
         }
 
         /* --- RECORD MODE --- */
@@ -351,26 +327,14 @@
             display: none;
         }
 
-        body.record-mode #mobile-menu-btn {
-            display: none !important;
-        }
-
         .resonance {
             animation: pulse 1s infinite;
         }
 
         @keyframes pulse {
-            0% {
-                text-shadow: 0 0 5px var(--accent);
-            }
-
-            50% {
-                text-shadow: 0 0 20px var(--accent);
-            }
-
-            100% {
-                text-shadow: 0 0 5px var(--accent);
-            }
+            0% { text-shadow: 0 0 5px var(--accent); }
+            50% { text-shadow: 0 0 20px var(--accent); }
+            100% { text-shadow: 0 0 5px var(--accent); }
         }
     </style>
 </head>
@@ -391,8 +355,6 @@
             <button class="sidebar-btn gold" onclick="toggleRecordUI()">Hide Nav</button>
         </div>
 
-
-
         <div class="nav-section">
             <div class="nav-label">Reports</div>
             <button class="sidebar-btn" onclick="toggleSlidePanel('notes')">📖 Notes</button>
@@ -406,6 +368,7 @@
         <div style="margin-top: auto; text-align: center; padding-bottom: 10px;">
             <div class="nav-label">Score</div>
             <b id="score-val" style="color: var(--primary); font-size: 1.2rem;">0</b>
+            <button class="sidebar-btn" onclick="resetQuiz()">Reset Quiz</button>
         </div>
     </nav>
 
@@ -445,7 +408,7 @@
             <input type="text" id="topic-search"
                 style="width:100%; max-width:400px; padding:15px; background:var(--surface); border:1px solid var(--text-muted); color:var(--accent); margin-bottom:20px;"
                 placeholder="Find Topics..." oninput="filterTopics()">
-            <div id="topic-grid" style="display:grid; gap:10px;"></div>
+            <div id="topic-grid" style="display:grid; gap:10px; grid-template-columns: 1fr 1fr;"></div>
         </div>
 
         <div class="main-container" id="quiz-area">
@@ -456,7 +419,6 @@
                     <button class="sidebar-btn" onclick="prevQuestion()">Back</button>
                     <button class="sidebar-btn gold" onclick="showExplanation()">Hint</button>
                     <button class="sidebar-btn" onclick="nextQuestion()">Next</button>
-
                 </div>
                 <div class="navigator-tools">
                     <button class="sidebar-btn" onclick="toggleSlidePanel('library')">Library</button>
@@ -464,23 +426,64 @@
                     <button class="sidebar-btn gold" onclick="exportMasterPDF()">Save</button>
                     <button id="review-nav-btn" class="sidebar-btn gold" onclick="startReview()">Review</button>
                     <button id="rec-btn" class="sidebar-btn" onclick="toggleRecording()">Record</button>
+                    <button class="sidebar-btn" onclick="resetQuiz()">Reset Quiz</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+
+        
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log("Service Worker Registered"));
+    }
+  
+
+        let currentLoadId = 0;
         let allTopics = [], topicData = { questions: [], fullNotes: "" };
         let currentIndex = 0, score = 0, startTime = null;
         let recorder, stream, chunks = [];
 
         window.onload = () => {
+            const saved = localStorage.getItem('tqf_progress');
             fetch('config.json').then(r => r.json()).then(d => {
                 allTopics = d.topics;
                 renderTopics(allTopics);
                 renderTopics(allTopics, true);
+
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    topicData = data.topicData;
+                    currentIndex = data.currentIndex;
+                    score = data.score;
+                    startTime = data.startTime ? new Date(data.startTime) : null;
+                    document.getElementById('menu-screen').style.display = 'none';
+                    document.getElementById('score-val').innerText = score;
+                    document.getElementById('ref-feed').innerText = topicData.fullNotes;
+                    renderProgressBar();
+                    loadQuestion();
+                }
             });
         };
+
+        function saveGameState() {
+            const state = {
+                topicData: topicData,
+                currentIndex: currentIndex,
+                score: score,
+                startTime: startTime ? startTime.getTime() : null
+            };
+            localStorage.setItem('tqf_progress', JSON.stringify(state));
+        }
+
+        function resetQuiz() {
+            if (confirm("Are you sure you want to reset all progress? This cannot be undone.")) {
+                localStorage.removeItem('tqf_progress');
+                location.reload();
+            }
+        }
 
         function renderTopics(topics, isPanel = false) {
             const gridId = isPanel ? 'panel-topic-grid' : 'topic-grid';
@@ -490,14 +493,12 @@
                 const div = document.createElement('div');
                 div.className = 'sidebar-btn';
                 div.style.width = isPanel ? '100%' : '300px';
-                div.style.fontSize = isPanel ? '0.8rem' : '1rem';
                 div.innerText = t.title;
                 div.onclick = () => {
                     loadTopic(t.file);
                     startTime = new Date();
                     document.getElementById('menu-screen').style.display = 'none';
                     if (isPanel) toggleSlidePanel();
-                    if (document.getElementById('side-nav').classList.contains('mobile-open')) toggleMobileNav();
                 };
                 grid.appendChild(div);
             });
@@ -514,41 +515,85 @@
             fetch(file).then(r => r.json()).then(d => {
                 topicData = d;
                 topicData.questions.forEach(q => {
-                    q.solved = false; q.userSelection = null;
+                    q.solved = false; q.userSelection = null; q.viewed = false;
                     q.shuffled = [q.a, ...q.options].sort(() => Math.random() - 0.5);
                 });
                 document.getElementById('ref-feed').innerText = topicData.fullNotes;
-                currentIndex = 0; score = 0; // RESET STATE
+                currentIndex = 0; score = 0;
                 document.getElementById('score-val').innerText = score;
-                document.getElementById('review-nav-btn').style.display = 'none';
+                renderProgressBar();
                 loadQuestion();
+                saveGameState();
             });
         }
 
-        async function typeWriter(el, text, speed) {
+        function renderProgressBar() {
+            const bar = document.getElementById('p-bar');
+            bar.innerHTML = '';
+            topicData.questions.forEach((_, i) => {
+                const step = document.createElement('div');
+                step.className = 'progress-step';
+                step.onclick = () => {
+                    currentIndex = i;
+                    loadQuestion();
+                };
+                bar.appendChild(step);
+            });
+        }
+
+        async function typeWriter(el, text, speed, loadId) {
             el.innerHTML = "";
             for (let char of text) {
+                if (loadId !== currentLoadId) return false; 
                 el.innerHTML += char;
                 await new Promise(r => setTimeout(r, speed));
             }
+            return true;
         }
 
         async function loadQuestion() {
             const q = topicData.questions[currentIndex];
             const area = document.getElementById('dynamic-content');
-            area.innerHTML = `<div class="question-card" id="q-text"></div><div id="options-box"></div><div id="exp-box" style="display:none; margin-top:20px; color:var(--success); background:rgba(215, 255, 208, 0.25); padding:15px; font-size:1.2rem; font-style:italic; border-right:8px solid var(--accent);"></div>`;
+            saveGameState();
 
-            await typeWriter(document.getElementById('q-text'), q.q, 60);
-            const optBox = document.getElementById('options-box');
-            for (let opt of q.shuffled) {
-                const btn = document.createElement('button');
-                btn.className = 'opt-btn';
-                optBox.appendChild(btn);
-                await typeWriter(btn, opt, 60);
-                btn.onclick = () => handleAnswer(btn, opt, q);
+            const steps = document.querySelectorAll('.progress-step');
+            steps.forEach((step, i) => {
+                step.classList.remove('active');
+                if (i === currentIndex) step.classList.add('active');
+                if (topicData.questions[i].solved) step.classList.add('completed');
+            });
+
+            if (q.viewed) {
+                area.innerHTML = `<div class="question-card">${q.q}</div><div id="options-box"></div><div id="exp-box" style="margin-top:20px; color:var(--success); background:rgba(215, 255, 208, 0.25); padding:15px; font-size:1.2rem; font-style:italic; border-right:8px solid var(--accent); display:${q.solved ? 'block' : 'none'};">${q.explanation || ''}</div>`;
+                const optBox = document.getElementById('options-box');
+                q.shuffled.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'opt-btn';
+                    if (q.solved && opt === q.a) btn.classList.add('correct');
+                    if (q.solved && opt === q.userSelection && opt !== q.a) btn.classList.add('wrong');
+                    btn.innerText = opt;
+                    btn.onclick = () => handleAnswer(btn, opt, q);
+                    optBox.appendChild(btn);
+                });
+            } else {
+                const myLoadId = ++currentLoadId; 
+                area.innerHTML = `<div class="question-card" id="q-text"></div><div id="options-box"></div><div id="exp-box" style="display:none; margin-top:20px; color:var(--success); background:rgba(215, 255, 208, 0.25); padding:15px; font-size:1.2rem; font-style:italic; border-right:8px solid var(--accent);"></div>`;
+                const proceed = await typeWriter(document.getElementById('q-text'), q.q, 60, myLoadId);
+                if (!proceed) return;
+                const optBox = document.getElementById('options-box');
+                for (let opt of q.shuffled) {
+                    if (myLoadId !== currentLoadId) return; 
+                    const btn = document.createElement('button');
+                    btn.className = 'opt-btn';
+                    optBox.appendChild(btn);
+                    const optProceed = await typeWriter(btn, opt, 60, myLoadId);
+                    if (!optProceed) return;
+                    btn.onclick = () => handleAnswer(btn, opt, q);
+                }
+                q.viewed = true;
+                saveGameState();
             }
-            document.getElementById('p-bar').style.width = `${((currentIndex + 1) / topicData.questions.length) * 100}%`;
-            if (currentIndex === topicData.questions.length - 1) document.getElementById('review-nav-btn').style.display = 'block';
+            document.getElementById('review-nav-btn').style.display = (currentIndex === topicData.questions.length - 1) ? 'block' : 'none';
         }
 
         function handleAnswer(btn, opt, q) {
@@ -559,10 +604,12 @@
                 document.getElementById('brand').classList.add('resonance');
                 setTimeout(() => document.getElementById('brand').classList.remove('resonance'), 1000);
                 showExplanation();
+                document.querySelectorAll('.progress-step')[currentIndex].classList.add('completed');
             } else {
                 btn.classList.add('wrong'); score -= 2;
             }
             document.getElementById('score-val').innerText = score;
+            saveGameState();
         }
 
         function showExplanation() {
@@ -572,242 +619,60 @@
         }
 
         async function exportMasterPDF() {
-
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF("p", "mm", "a4");
-
             const margin = 20;
             const pageWidth = doc.internal.pageSize.getWidth();
             const pageHeight = doc.internal.pageSize.getHeight();
             const contentWidth = pageWidth - margin * 2;
-
             let y = margin;
 
-            const lineHeight = 1.6;
-
-            /* ---------------- HEADER ---------------- */
-
             function header() {
-                doc.setFont("helvetica", "bold");
-                doc.setFontSize(14);
-                doc.text("Takeaways Learning Workbook", margin, 12);
-
-                doc.setFont("helvetica", "normal");
-                doc.setFontSize(9);
-                doc.text(new Date().toLocaleDateString(), pageWidth - 35, 12);
-
-                doc.setLineWidth(.3);
-                doc.line(margin, 15, pageWidth - margin, 15);
+                doc.setFont("helvetica", "bold"); doc.setFontSize(14);
+                doc.text("Learned Today", margin, 12);
+                doc.setFontSize(9); doc.text(new Date().toLocaleDateString(), pageWidth - 35, 12);
+                doc.setLineWidth(.3); doc.line(margin, 15, pageWidth - margin, 15);
             }
-
-            /* ---------------- FOOTER ---------------- */
 
             function footer() {
-
                 const pages = doc.getNumberOfPages();
-
                 for (let i = 1; i <= pages; i++) {
-                    doc.setPage(i);
-                    doc.setFontSize(9);
-                    doc.text(
-                        `Page ${i} of ${pages}`,
-                        pageWidth / 2,
-                        pageHeight - 8,
-                        { align: "center" }
-                    );
+                    doc.setPage(i); doc.setFontSize(9);
+                    doc.text(`Page ${i} of ${pages}`, pageWidth / 2, pageHeight - 8, { align: "center" });
                 }
-
             }
-
-            /* ---------------- PAGE BREAK ---------------- */
-
-            function pageBreak(space = 10) {
-
-                if (y + space > pageHeight - 20) {
-                    doc.addPage();
-                    header();
-                    y = margin;
-                }
-
-            }
-
-            /* ---------------- TEXT BLOCK ---------------- */
 
             function textBlock(text, size = 12, style = "normal", space = 8) {
-
-                doc.setFont("helvetica", style);
-                doc.setFontSize(size);
-
-                const lines = doc.splitTextToSize(text, contentWidth);
-
-                const spacing = size * 0.3528 * lineHeight;
-
+                doc.setFont("helvetica", style); doc.setFontSize(size);
+                const lines = doc.splitTextToSize(text || "", contentWidth);
+                const spacing = size * 0.3528 * 1.6;
                 lines.forEach(line => {
-                    pageBreak(spacing);
-                    doc.text(line, margin, y);
-                    y += spacing;
+                    if (y + spacing > pageHeight - 20) { doc.addPage(); header(); y = margin + 10; }
+                    doc.text(line, margin, y); y += spacing;
                 });
-
                 y += space;
-
             }
 
-            /* ---------------- MATH RENDER ---------------- */
-
-            async function renderFormula(formula) {
-
-                const el = document.createElement("div");
-                el.style.position = "absolute";
-                el.style.left = "-9999px";
-                el.innerHTML = `\\(${formula}\\)`;
-                document.body.appendChild(el);
-
-                await MathJax.typesetPromise([el]);
-
-                const svg = el.querySelector("svg");
-                const data = new XMLSerializer().serializeToString(svg);
-
-                const canvas = document.createElement("canvas");
-                const ctx = canvas.getContext("2d");
-
-                const img = new Image();
-
-                return new Promise(resolve => {
-
-                    img.onload = function () {
-
-                        canvas.width = img.width;
-                        canvas.height = img.height;
-
-                        ctx.drawImage(img, 0, 0);
-
-                        const url = canvas.toDataURL("image/png");
-
-                        pageBreak(30);
-
-                        doc.addImage(url, "PNG", margin, y, 60, 20);
-
-                        y += 25;
-
-                        document.body.removeChild(el);
-
-                        resolve();
-
-                    };
-
-                    img.src = 'data:image/svg+xml;base64,' + btoa(data);
-
-                });
-
-            }
-
-            /* ---------------- COVER PAGE ---------------- */
-
-            doc.setFontSize(26);
-            doc.setFont("helvetica", "bold");
-            doc.text("Takeaways Workbook", pageWidth / 2, 80, { align: "center" });
-
-            doc.setFontSize(14);
-            doc.setFont("helvetica", "normal");
-            doc.text("Learning Summary", pageWidth / 2, 95, { align: "center" });
-
-            doc.text(
-                `Generated: ${new Date().toLocaleDateString()}`,
-                pageWidth / 2,
-                110,
-                { align: "center" }
-            );
-
-            doc.addPage();
-
-            header();
-
-            y = margin + 10;
-
-            /* ---------------- SESSION NOTES ---------------- */
-
+            doc.setFontSize(26); doc.text("Learnings", pageWidth / 2, 80, { align: "center" });
+            doc.addPage(); header(); y = margin + 10;
             textBlock("Session Notes", 16, "bold", 4);
-
-            const notes = document.getElementById("session-notes").value
-                || "No notes recorded.";
-
-            textBlock(notes, 12, "normal", 10);
-
-            /* ---------------- REFERENCE MATERIAL ---------------- */
-
+            textBlock(document.getElementById("session-notes").value || "No notes recorded.", 12, "normal", 10);
             textBlock("Reference Material", 16, "bold", 4);
-
-            const ref = topicData.fullNotes || "";
-
-            textBlock(ref, 12, "normal", 10);
-
-            /* ---------------- SAMPLE FORMULA SUPPORT ---------------- */
-
-            if (topicData.formulas) {
-
-                textBlock("Key Formulas", 16, "bold", 6);
-
-                for (const f of topicData.formulas) {
-
-                    await renderFormula(f);
-
-                }
-
-            }
-
-            /* ---------------- QUIZ SUMMARY ---------------- */
-
+            textBlock(topicData.fullNotes || "", 12, "normal", 10);
             textBlock("Quiz Summary", 16, "bold", 6);
-
             let correct = 0;
-
-            topicData.questions.forEach(q => {
-                if (q.userSelection === q.a) correct++;
-            });
-
-            const total = topicData.questions.length;
-
-            const percent = Math.round((correct / total) * 100);
-
-            textBlock(
-                `Score: ${correct} / ${total}  |  Accuracy: ${percent}%`,
-                13,
-                "bold",
-                12
-            );
-
-            /* ---------------- QUIZ TABLE ---------------- */
-
-            textBlock("Quiz Review", 16, "bold", 6);
-
+            topicData.questions.forEach(q => { if (q.userSelection === q.a) correct++; });
+            textBlock(`Score: ${correct} / ${topicData.questions.length}`, 13, "bold", 12);
+            
+            textBlock("Detailed Review", 16, "bold", 6);
             topicData.questions.forEach((q, i) => {
-
                 textBlock(`Question ${i + 1}`, 13, "bold", 2);
-
                 textBlock(q.q, 12, "normal", 4);
-
-                textBlock(
-                    `Your Answer: ${q.userSelection || "Not Answered"}`,
-                    11,
-                    "normal",
-                    2
-                );
-
-                textBlock(
-                    `Correct Answer: ${q.a}`,
-                    11,
-                    "bold",
-                    8
-                );
-
+                textBlock(`Your Answer: ${q.userSelection || "Not Answered"} ${q.userSelection === q.a ? '(Correct)' : '(Incorrect)'}`, 11, "normal", 2);
+                textBlock(`Correct Answer: ${q.a}`, 11, "italic", 8);
             });
-
-            /* ---------------- FOOTER ---------------- */
-
             footer();
-
             doc.save("TQF_Workbook.pdf");
-
         }
 
         async function toggleRecording() {
@@ -824,7 +689,7 @@
                         btn.innerText = "Start Rec";
                     };
                     recorder.start(); btn.innerText = "STOP REC";
-                } catch (e) { console.error("Screen capture failed."); }
+                } catch (e) { console.error("Capture failed."); }
             } else { recorder.stop(); stream.getTracks().forEach(t => t.stop()); }
         }
 
@@ -853,12 +718,12 @@
         function nextQuestion() { if (currentIndex < topicData.questions.length - 1) { currentIndex++; loadQuestion(); } }
 
         function startReview() {
-            let html = `<h2 style="color:var(--primary);">Session Review</h2>`;
+            let html = `<h2>Session Review</h2>`;
             topicData.questions.forEach((q, i) => {
-                html += `<div style="padding:20px 0; border-bottom:1px solid #233554;">
+                html += `<div style="padding:20px 0; border-bottom:1px solid #333;">
                     <p><b>Q${i + 1}:</b> ${q.q}</p>
-                    <div style="color:${q.userSelection === q.a ? 'var(--success)' : 'var(--error)'}">Your Choice: ${q.userSelection || 'None'}</div>
-                    <div style="color:var(--success)">Correct: ${q.a}</div>
+                    <div style="color:${q.userSelection === q.a ? 'var(--success)' : 'var(--error)'}">Choice: ${q.userSelection || 'None'}</div>
+                    <div>Correct: ${q.a}</div>
                 </div>`;
             });
             document.getElementById('dynamic-content').innerHTML = html;
