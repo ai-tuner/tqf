@@ -1,77 +1,125 @@
 {
-  "fullNotes": "A diode is a semiconductor device that acts as a one-way gate for electric current. It is constructed by joining P-type and N-type silicon, creating a P-N junction. At this junction, a depletion region forms, establishing a barrier potential. For a standard silicon diode to conduct in forward bias, it must overcome a threshold of roughly 0.7V. Key design considerations include doping concentrations, breakdown voltage, and thermal dissipation limits. Diodes are fundamental in rectification, clipping, and protection circuits.",
+  "fullNotes": "Diode design focuses on the manipulation of semiconductor materials to control the flow of electric current. At its core is the P-N junction, formed by doping intrinsic semiconductors (like Silicon or Germanium) with trivalent or pentavalent impurities. Key design parameters include the barrier potential, depletion region width, doping concentrations, and thermal stability. Modern diode design extends to specialized types like Schottky (metal-semiconductor), Zener (controlled breakdown), and LEDs (electroluminescence).",
   "questions": [
     {
-      "q": "What two types of semiconductor materials are joined to form a basic diode?",
-      "a": "P-type and N-type",
-      "options": ["Positive and Neutral", "Active and Passive"],
-      "explanation": "A diode is created at the junction of P-type (hole-rich) and N-type (electron-rich) materials."
+      "q": "What is the most common intrinsic semiconductor material used in diode design?",
+      "a": "Silicon",
+      "options": ["Copper", "Iron"],
+      "explanation": "Silicon is preferred due to its abundance, high temperature stability, and suitable bandgap."
     },
     {
-      "q": "What is the name of the insulating layer that forms at the P-N junction?",
-      "a": "Depletion region",
-      "options": ["Conduction zone", "Diffusion layer"],
-      "explanation": "The depletion region is an area where mobile charge carriers have recombined, leaving behind a region that resists current flow."
-    },
-    {
-      "q": "What is the typical forward bias voltage required for a silicon diode to conduct?",
-      "a": "0.7V",
-      "options": ["0.3V", "1.5V"],
-      "explanation": "Silicon diodes generally require a threshold of approximately 0.7V to overcome the internal barrier potential."
-    },
-    {
-      "q": "What process is used to add impurities to pure silicon to change its electrical properties?",
+      "q": "Which process involves adding specific impurities to a semiconductor to alter its conductivity?",
       "a": "Doping",
-      "options": ["Plating", "Etching"],
-      "explanation": "Doping involves adding specific atoms (like Phosphorus or Boron) to the semiconductor lattice to increase the number of free electrons or holes."
+      "options": ["Annealing", "Etching"],
+      "explanation": "Doping introduces charge carriers (electrons or holes) to the crystal lattice."
     },
     {
-      "q": "In a diode schematic symbol, what does the 'bar' represent?",
-      "a": "The Cathode",
-      "options": ["The Anode", "The Ground"],
-      "explanation": "The bar represents the Cathode (negative side), while the triangle points from the Anode (positive side) toward the Cathode."
+      "q": "An N-type semiconductor is created by adding which type of impurity?",
+      "a": "Pentavalent",
+      "options": ["Trivalent", "Monovalent"],
+      "explanation": "Pentavalent atoms (like Phosphorus) have five valence electrons, providing extra free electrons."
     },
     {
-      "q": "What happens when a diode is placed in 'Reverse Bias'?",
-      "a": "It blocks current flow",
-      "options": ["It amplifies the voltage", "It acts as a short circuit"],
-      "explanation": "In reverse bias, the depletion region widens, preventing the flow of charge carriers through the junction."
+      "q": "A P-type semiconductor is created by adding which type of impurity?",
+      "a": "Trivalent",
+      "options": ["Pentavalent", "Hexavalent"],
+      "explanation": "Trivalent atoms (like Boron) have three valence electrons, creating 'holes' or vacancies."
     },
     {
-      "q": "Which type of diode is specifically designed to operate in the reverse breakdown region?",
-      "a": "Zener Diode",
-      "options": ["LED", "Schottky Diode"],
-      "explanation": "Zener diodes are engineered to allow current to flow backward safely once a specific breakdown voltage is reached."
+      "q": "What is the primary charge carrier in N-type material?",
+      "a": "Electrons",
+      "options": ["Holes", "Protons"],
+      "explanation": "N-type (Negative-type) material is designed to have an excess of free electrons."
     },
     {
-      "q": "What is the conversion of Alternating Current (AC) to Direct Current (DC) called?",
-      "a": "Rectification",
-      "options": ["Modulation", "Inversion"],
-      "explanation": "Rectification uses the one-way property of diodes to ensure current only flows in one direction in a circuit."
+      "q": "What occurs immediately after a P-N junction is formed?",
+      "a": "Diffusion of charge carriers",
+      "options": ["Complete insulation", "Superconductivity"],
+      "explanation": "Electrons from the N-side and holes from the P-side diffuse across the junction and recombine."
     },
     {
-      "q": "Why is a Schottky diode often used in high-frequency switching power supplies?",
-      "a": "Because it has a lower forward voltage drop and faster switching speed.",
-      "options": ["Because it is physically larger", "Because it can handle higher heat"],
-      "explanation": "Schottky diodes use a metal-semiconductor junction, allowing them to switch on and off much faster than standard P-N diodes."
+      "q": "What is the region called where no mobile charge carriers exist near the junction?",
+      "a": "Depletion Region",
+      "options": ["Conduction Band", "Saturation Zone"],
+      "explanation": "Recombination leaves behind ionized donor and acceptor atoms, creating a region 'depleted' of mobile carriers."
     },
     {
-      "q": "What is the primary function of a Light Emitting Diode (LED)?",
-      "a": "To emit photons when electrons recombine with holes.",
-      "options": ["To store electrical charge", "To measure temperature"],
-      "explanation": "When forward-biased, electrons cross the junction and fall into holes, releasing energy in the form of light."
+      "q": "What is the standard barrier potential for a Germanium diode?",
+      "a": "0.3V",
+      "options": ["0.7V", "1.1V"],
+      "explanation": "Germanium requires less energy to overcome the barrier potential compared to Silicon."
     },
     {
-      "q": "What happens to a diode if the 'Peak Inverse Voltage' (PIV) is exceeded?",
-      "a": "The diode may suffer permanent damage due to breakdown.",
-      "options": ["The diode gets brighter", "The current reverses perfectly"],
-      "explanation": "PIV is the maximum voltage a diode can withstand in reverse bias before the material breaks down and conducts uncontrollably."
+      "q": "How does increasing doping concentration affect the depletion region width?",
+      "a": "It decreases the width.",
+      "options": ["It increases the width.", "It has no effect."],
+      "explanation": "Higher doping increases the density of ions, requiring a smaller distance to establish the barrier potential."
     },
     {
-      "q": "Why is thermal management critical in high-power diode design?",
-      "a": "Because excessive heat can lead to thermal runaway and device failure.",
-      "options": ["Because heat makes the diode too heavy", "Because heat changes the diode's color"],
-      "explanation": "As temperature increases, leakage current rises, which can create a cycle of increasing heat and current until the diode is destroyed."
+      "q": "In forward bias, which terminal of the battery is connected to the P-side?",
+      "a": "Positive",
+      "options": ["Negative", "Ground"],
+      "explanation": "Positive to P-side (Anode) pushes holes toward the junction, reducing the depletion width."
+    },
+    {
+      "q": "What happens to the depletion region during reverse bias?",
+      "a": "It widens.",
+      "options": ["It narrows.", "It stays the same."],
+      "explanation": "Reverse bias pulls carriers away from the junction, increasing the insulating gap."
+    },
+    {
+      "q": "What is the term for the maximum reverse voltage a diode can withstand before failing?",
+      "a": "Peak Inverse Voltage (PIV)",
+      "options": ["Knee Voltage", "Forward Voltage"],
+      "explanation": "PIV is a critical design spec to prevent permanent damage in rectifier circuits."
+    },
+    {
+      "q": "Which diode is designed to handle very fast switching by using a metal-semiconductor junction?",
+      "a": "Schottky Diode",
+      "options": ["Varactor Diode", "Zener Diode"],
+      "explanation": "Schottky diodes have no minority carrier storage, allowing for nanosecond switching."
+    },
+    {
+      "q": "What is the relationship between temperature and a diode's forward voltage (Vf)?",
+      "a": "Vf decreases as temperature increases.",
+      "options": ["Vf increases as temperature increases.", "Temperature has no effect."],
+      "explanation": "In Silicon, Vf typically drops by about 2mV for every degree Celsius increase."
+    },
+    {
+      "q": "Which diode acts as a variable capacitor when reverse biased?",
+      "a": "Varactor Diode",
+      "options": ["Tunnel Diode", "Photo Diode"],
+      "explanation": "Varactors use the depletion region as a dielectric; its width (and thus capacitance) changes with voltage."
+    },
+    {
+      "q": "What is 'Thermal Runaway' in diode design?",
+      "a": "A destructive cycle where heat increases current, which creates more heat.",
+      "options": ["The process of cooling a diode", "The temperature at which a diode melts"],
+      "explanation": "As heat increases, leakage current increases, leading to more power dissipation and eventual failure."
+    },
+    {
+      "q": "Which type of breakdown occurs in highly doped diodes at low reverse voltages?",
+      "a": "Zener Breakdown",
+      "options": ["Avalanche Breakdown", "Thermal Breakdown"],
+      "explanation": "Zener breakdown is caused by field emission pulling electrons directly out of their covalent bonds."
+    },
+    {
+      "q": "What is the 'Knee Voltage' on an I-V characteristic curve?",
+      "a": "The point where the diode begins to conduct heavily.",
+      "options": ["The point where the diode breaks", "The point of zero current"],
+      "explanation": "Also known as the cut-in voltage, it is the threshold where forward current increases exponentially."
+    },
+    {
+      "q": "In a diode package, how is the Cathode usually identified?",
+      "a": "A colored band or stripe.",
+      "options": ["A long lead wire", "A square shape"],
+      "explanation": "Most discrete diodes feature a band on the cathode end to indicate the direction of flow."
+    },
+    {
+      "q": "What is the purpose of a 'Free-wheeling' diode in a circuit with an inductor?",
+      "a": "To protect components from high voltage spikes when the switch opens.",
+      "options": ["To increase the speed of the motor", "To act as a secondary battery"],
+      "explanation": "Inductors resist changes in current; the diode provides a safe path for the energy to dissipate."
     }
   ]
 }
