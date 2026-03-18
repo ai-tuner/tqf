@@ -340,12 +340,12 @@
 </head>
 
 <body id="main-body">
-
+<script>
 if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
         .then(() => console.log("Service Worker Registered"));
     }
-
+</script>
     <div id="mobile-menu-btn" onclick="toggleMobileNav()">QF</div>
 
     <nav id="side-nav">
