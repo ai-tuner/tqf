@@ -1,0 +1,77 @@
+{
+  "fullNotes": "A diode is a semiconductor device that primarily allows current to flow in one direction. It is created by joining P-type (positive) and N-type (negative) semiconductor materials. At the junction, electrons and holes recombine to create a depletion region, which acts as a barrier. For a silicon diode to conduct, it typically requires a forward bias voltage of approximately 0.7V. Diodes are essential for rectification, signal modulation, and voltage regulation.",
+  "questions": [
+    {
+      "q": "Which two types of semiconductor materials are joined to create a basic diode?",
+      "a": "P-type and N-type",
+      "options": ["Positive and Neutral", "Active and Passive"],
+      "explanation": "A diode is formed by a P-N junction, where 'P' stands for positive (holes) and 'N' stands for negative (electrons)."
+    },
+    {
+      "q": "What is the name of the insulating layer that forms at the junction of a diode?",
+      "a": "Depletion region",
+      "options": ["Conduction zone", "Neutral territory"],
+      "explanation": "The depletion region is an area near the junction where mobile charge carriers have been diffused, creating a barrier to current."
+    },
+    {
+      "q": "What is the typical forward bias voltage required for a Silicon diode to conduct?",
+      "a": "0.7V",
+      "options": ["0.3V", "1.5V"],
+      "explanation": "Silicon diodes generally require about 0.7 Volts to overcome the internal barrier potential, while Germanium diodes require about 0.3V."
+    },
+    {
+      "q": "What is the process of converting AC (Alternating Current) to DC (Direct Current) using diodes called?",
+      "a": "Rectification",
+      "options": ["Amplification", "Oscillation"],
+      "explanation": "Because diodes only allow current to flow in one direction, they are used in rectifier circuits to turn AC into a steady DC pulse."
+    },
+    {
+      "q": "In a diode symbol, what does the 'arrow' part represent?",
+      "a": "The Anode",
+      "options": ["The Cathode", "The Ground"],
+      "explanation": "In a schematic, the triangle (arrow) is the Anode (positive side), and the flat line is the Cathode (negative side)."
+    },
+    {
+      "q": "What happens when a diode is 'Reverse Biased'?",
+      "a": "It blocks current flow.",
+      "options": ["It amplifies the signal.", "It changes the voltage to zero."],
+      "explanation": "In reverse bias, the positive terminal is connected to the N-type material, widening the depletion region and preventing current."
+    },
+    {
+      "q": "What is 'Doping' in the context of diode design?",
+      "a": "Adding impurities to a semiconductor to change its conductivity.",
+      "options": ["Cleaning the silicon wafers", "Coating the diode in plastic"],
+      "explanation": "Doping introduces atoms like Phosphorus or Boron into Silicon to create an excess of electrons or holes."
+    },
+    {
+      "q": "Which specific type of diode is designed to operate safely in the 'Breakdown Region'?",
+      "a": "Zener Diode",
+      "options": ["LED", "Schottky Diode"],
+      "explanation": "Zener diodes are specially designed to allow current to flow backward when a specific 'Zener voltage' is reached, making them great for voltage regulation."
+    },
+    {
+      "q": "Why is a 'Schottky Diode' often used in high-speed switching applications?",
+      "a": "It has a lower forward voltage drop and faster switching speed.",
+      "options": ["Because it is larger", "Because it uses more power"],
+      "explanation": "Schottky diodes use a metal-semiconductor junction, which allows them to switch on and off much faster than standard P-N junction diodes."
+    },
+    {
+      "q": "What is the primary purpose of a 'Photodiode'?",
+      "a": "To convert light into an electrical current.",
+      "options": ["To emit bright light", "To store electricity"],
+      "explanation": "Photodiodes are designed to be light-sensitive; when photons hit the junction, they create electron-hole pairs, generating current."
+    },
+    {
+      "q": "Why is thermal management important in diode design?",
+      "a": "Excess heat can increase leakage current and lead to thermal runaway.",
+      "options": ["Heat makes the diode turn blue", "Heat turns the diode into a wire"],
+      "explanation": "As diodes get hotter, their resistance decreases, which can cause more current to flow, creating even more heat until the device fails."
+    },
+    {
+      "q": "In a Bridge Rectifier, how many diodes are typically used?",
+      "a": "Four",
+      "options": ["Two", "One"],
+      "explanation": "A full-wave bridge rectifier uses four diodes arranged in a specific pattern to convert both halves of an AC cycle into DC."
+    }
+  ]
+}
