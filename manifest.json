@@ -1,6 +1,6 @@
 {
-  "name": "The Quest Factor",
-  "short_name": "TQF",
+  "name": "Quiz",
+  "short_name": "Quiz",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -18,3 +18,5 @@
     }
   ]
 }
+
+
