@@ -1,6 +1,6 @@
 {
     "topics": [
-        { "title": "Light", "file": "light.json" },
+        
         { "title": "Pi", "file": "pi.json" },
   { "title": "Magnetic Forces", "file": "magnetic-forces.json" },
 { "title": "Diode Design", "file": "diode-design.json" }
