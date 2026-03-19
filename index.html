@@ -545,59 +545,69 @@ if ('serviceWorker' in navigator) {
         }
 
         async function typeWriter(el, text, speed, loadId) {
-            el.innerHTML = "";
-            for (let char of text) {
-                if (loadId !== currentLoadId) return false; 
-                el.innerHTML += char;
-                await new Promise(r => setTimeout(r, speed));
-            }
-            return true;
-        }
+    el.innerHTML = "";
+    for (let char of text) {
+        // Critical Check: if a new load has started, stop this execution immediately
+        if (loadId !== currentLoadId) return false; 
+        
+        el.innerHTML += char;
+        await new Promise(r => setTimeout(r, speed));
+    }
+    return true;
+}
 
         async function loadQuestion() {
-            const q = topicData.questions[currentIndex];
-            const area = document.getElementById('dynamic-content');
-            saveGameState();
+    const q = topicData.questions[currentIndex];
+    const area = document.getElementById('dynamic-content');
+    saveGameState();
 
-            const steps = document.querySelectorAll('.progress-step');
-            steps.forEach((step, i) => {
-                step.classList.remove('active');
-                if (i === currentIndex) step.classList.add('active');
-                if (topicData.questions[i].solved) step.classList.add('completed');
-            });
+    const steps = document.querySelectorAll('.progress-step');
+    steps.forEach((step, i) => {
+        step.classList.remove('active');
+        if (i === currentIndex) step.classList.add('active');
+        if (topicData.questions[i].solved) step.classList.add('completed');
+    });
 
-            if (q.viewed) {
-                area.innerHTML = `<div class="question-card">${q.q}</div><div id="options-box"></div><div id="exp-box" style="margin-top:20px; color:var(--success); background:rgba(215, 255, 208, 0.25); padding:15px; font-size:1.2rem; font-style:italic; border-right:8px solid var(--accent); display:${q.solved ? 'block' : 'none'};">${q.explanation || ''}</div>`;
-                const optBox = document.getElementById('options-box');
-                q.shuffled.forEach(opt => {
-                    const btn = document.createElement('button');
-                    btn.className = 'opt-btn';
-                    if (q.solved && opt === q.a) btn.classList.add('correct');
-                    if (q.solved && opt === q.userSelection && opt !== q.a) btn.classList.add('wrong');
-                    btn.innerText = opt;
-                    btn.onclick = () => handleAnswer(btn, opt, q);
-                    optBox.appendChild(btn);
-                });
-            } else {
-                const myLoadId = ++currentLoadId; 
-                area.innerHTML = `<div class="question-card" id="q-text"></div><div id="options-box"></div><div id="exp-box" style="display:none; margin-top:20px; color:var(--success); background:rgba(215, 255, 208, 0.25); padding:15px; font-size:1.2rem; font-style:italic; border-right:8px solid var(--accent);"></div>`;
-                const proceed = await typeWriter(document.getElementById('q-text'), q.q, 60, myLoadId);
-                if (!proceed) return;
-                const optBox = document.getElementById('options-box');
-                for (let opt of q.shuffled) {
-                    if (myLoadId !== currentLoadId) return; 
-                    const btn = document.createElement('button');
-                    btn.className = 'opt-btn';
-                    optBox.appendChild(btn);
-                    const optProceed = await typeWriter(btn, opt, 60, myLoadId);
-                    if (!optProceed) return;
-                    btn.onclick = () => handleAnswer(btn, opt, q);
-                }
-                q.viewed = true;
-                saveGameState();
-            }
-            document.getElementById('review-nav-btn').style.display = (currentIndex === topicData.questions.length - 1) ? 'block' : 'none';
+    if (q.viewed) {
+        // ... (Keep your existing 'if viewed' logic here)
+        area.innerHTML = `<div class="question-card">${q.q}</div><div id="options-box"></div><div id="exp-box" style="margin-top:20px; color:var(--success); background:rgba(215, 255, 208, 0.25); padding:15px; font-size:1.2rem; font-style:italic; border-right:8px solid var(--accent); display:${q.solved ? 'block' : 'none'};">${q.explanation || ''}</div>`;
+        const optBox = document.getElementById('options-box');
+        q.shuffled.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'opt-btn';
+            if (q.solved && opt === q.a) btn.classList.add('correct');
+            if (q.solved && opt === q.userSelection && opt !== q.a) btn.classList.add('wrong');
+            btn.innerText = opt;
+            btn.onclick = () => handleAnswer(btn, opt, q);
+            optBox.appendChild(btn);
+        });
+    } else {
+        const myLoadId = ++currentLoadId; 
+        area.innerHTML = `<div class="question-card" id="q-text"></div><div id="options-box"></div><div id="exp-box" style="display:none; margin-top:20px; color:var(--success); background:rgba(215, 255, 208, 0.25); padding:15px; font-size:1.2rem; font-style:italic; border-right:8px solid var(--accent);"></div>`;
+        
+        const proceed = await typeWriter(document.getElementById('q-text'), q.q, 60, myLoadId);
+        if (!proceed) return;
+
+        const optBox = document.getElementById('options-box');
+        for (let opt of q.shuffled) {
+            // Check before creating each button
+            if (myLoadId !== currentLoadId) return; 
+            
+            const btn = document.createElement('button');
+            btn.className = 'opt-btn';
+            optBox.appendChild(btn);
+            
+            const optProceed = await typeWriter(btn, opt, 60, myLoadId);
+            // If the user clicked 'Back' while this specific button was typing, stop everything
+            if (!optProceed) return; 
+            
+            btn.onclick = () => handleAnswer(btn, opt, q);
         }
+        q.viewed = true;
+        saveGameState();
+    }
+    document.getElementById('review-nav-btn').style.display = (currentIndex === topicData.questions.length - 1) ? 'block' : 'none';
+}
 
         function handleAnswer(btn, opt, q) {
             if (q.solved) return;
