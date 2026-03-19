@@ -1,0 +1,77 @@
+{
+  "fullNotes": "Dhurandhar 2: The Revenge is a 2026 Indian spy action epic directed by Aditya Dhar and starring Ranveer Singh in a dual-shaded role as Jaskirat Singh Rangi (aka Hamza Ali Mazari). Released on March 19, 2026, the film is the final installment of the Dhurandhar duology and features an ensemble cast including Arjun Rampal, Sanjay Dutt, R. Madhavan, and Sara Arjun. The plot follows Hamza as he infiltrates Karachi's criminal underworld to dismantle terror networks responsible for the 26/11 attacks, structured across eight intense chapters. While the film has shattered box office records with a historic ₹52.7 crore gross from paid previews, critical reception is highly polarized. Proponents hail it as a 'monumental masterpiece' with 'National Award-worthy' acting by Ranveer Singh, while detractors criticize its nearly 4-hour runtime and describe it as 'hyper-nationalistic propaganda'.",
+  "questions": [
+    {
+      "q": "Which actor-director duo returned for the 2026 sequel 'Dhurandhar 2: The Revenge'?",
+      "a": "Ranveer Singh and Aditya Dhar",
+      "options": ["Hrithik Roshan and Siddharth Anand", "Ranbir Kapoor and Sandeep Reddy Vanga"],
+      "explanation": "Aditya Dhar directed Ranveer Singh in this high-stakes sequel, which is positioned as a blueprint for Indian spy-thrillers. <br>"
+    },
+    {
+      "q": "What record did 'Dhurandhar 2' break regarding its premiere/paid preview collections in India?",
+      "a": "Highest ever paid previews (₹52.7 crore gross)",
+      "options": ["Highest opening day in North America", "Most tickets sold in one hour"],
+      "explanation": "The film outperformed the previous record holder, 'OG', which had made around ₹25 crore in its premiere."
+    },
+    {
+      "q": "What is the primary dual identity of the protagonist played by Ranveer Singh?",
+      "a": "Jaskirat Singh Rangi / Hamza Ali Mazari",
+      "options": ["Ajay Sanyal / Major Iqbal", "Chaudhary Aslam / Uzair Baloch"],
+      "explanation": "He plays a Punjab Regiment soldier turned undercover spy who becomes a feared figure in Karachi's Lyari district. <br>[Image showing the contrast between Jaskirat and Hamza]"
+    },
+    {
+      "q": "How long is the total runtime of 'Dhurandhar 2: The Revenge'?",
+      "a": "3 hours 49 minutes",
+      "options": ["2 hours 30 minutes", "3 hours 10 minutes"],
+      "explanation": "Despite being nearly four hours long, critics noted the pace is non-stop, with a narrative divided into eight distinct chapters."
+    },
+    {
+      "q": "Which veteran actor plays the role of Major Iqbal, the chilling ISI antagonist?",
+      "a": "Arjun Rampal",
+      "options": ["Sanjay Dutt", "Akshaye Khanna"],
+      "explanation": "Arjun Rampal's performance was described as cold and calculated, serving as the primary foil to Hamza."
+    },
+    {
+      "q": "What was the critical rating given by Taran Adarsh for this film?",
+      "a": "4.5/5 stars",
+      "options": ["2/5 stars", "3.5/5 stars"],
+      "explanation": "Trade analyst Taran Adarsh described the film as a 'brilliant' and 'power-packed' action spectacle."
+    },
+    {
+      "q": "Conversely, which major publication gave the film a 2-star rating, calling it an 'incoherent marathon'?",
+      "a": "The Indian Express",
+      "options": ["The Times of India", "Pinkvilla"],
+      "explanation": "Critic Shubhra Gupta panned the film for lacking the 'mazaa' of the original despite the high-scale action."
+    },
+    {
+      "q": "Which real-life character is R. Madhavan's role as Ajay Sanyal (Director of IB) based on?",
+      "a": "Ajit Doval",
+      "options": ["S. Jaishankar", "Amit Shah"],
+      "explanation": "Madhavan plays the head of India's Intelligence Bureau, a character inspired by real-world security figures. <br>"
+    },
+    {
+      "q": "Who composed the music and unique background score that critics called 'insanely unique'?",
+      "a": "Shashwat Sachdev",
+      "options": ["A.R. Rahman", "Anirudh Ravichander"],
+      "explanation": "Sachdev's score is credited with maintaining the film's pulse through its long runtime."
+    },
+    {
+      "q": "What is the name of the Karachi underworld district where Hamza operates as the 'Sher-e-Baloch'?",
+      "a": "Lyari",
+      "options": ["Malir", "Clifton"],
+      "explanation": "The film depicts the gritty, violent underworld of the Lyari mafia in Karachi."
+    },
+    {
+      "q": "Which OTT platform has secured the digital rights for 'Dhurandhar 2' for a reported ₹150 crore?",
+      "a": "JioHotstar",
+      "options": ["Netflix", "Amazon Prime Video"],
+      "explanation": "While the first film was on Netflix, the sequel marks a shift to JioHotstar for its digital premiere."
+    },
+    {
+      "q": "Which major Tollywood star was among the first celebrities to praise the film, calling it a 'proud patriot' moment?",
+      "a": "Allu Arjun",
+      "options": ["Mahesh Babu", "Ram Charan"],
+      "explanation": "Allu Arjun commended both Ranveer Singh and Aditya Dhar for their work on the film."
+    }
+  ]
+}

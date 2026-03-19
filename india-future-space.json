@@ -1,0 +1,72 @@
+{
+  "fullNotes": "On March 19, 2026, ISRO recovered a PSLV SITVC steering component from the Tamil Nadu coast. This steering system uses Strontium Perchlorate injections to nudge the rocket during its first-stage flight. Meanwhile, ISRO is finalizing Chandrayaan-4, a 5-module mission designed to return lunar samples from the 'Mons Mouton' region of the Moon's South Pole by 2028. Future missions like Chandrayaan-5 will feature a 100-day lifespan and a 350kg rover, significantly upgrading India's lunar capabilities.",
+  "questions": [
+    {
+      "q": "What specific piece of space debris was recovered by ISRO teams off the coast of Tamil Nadu today, March 19, 2026?",
+      "a": "SITVC system",
+      "options": ["Propulsion Module", "Payload Fairing"],
+      "explanation": "The SITVC stands for Secondary Injection Thrust Vector Control, a steering component from a PSLV booster. "
+    },
+    {
+      "q": "Which part of the rocket does this SITVC system belong to?",
+      "a": "First stage (S139 booster)",
+      "options": ["Cryogenic upper stage", "Satellite heat shield"],
+      "explanation": "It is part of the S139 solid-fuel motor that provides initial thrust at liftoff."
+    },
+    {
+      "q": "What chemical is 'squirted' through ports in the SITVC system to help the rocket steer during flight?",
+      "a": "Strontium Perchlorate",
+      "options": ["Liquid Oxygen", "Hydrazine"],
+      "explanation": "Injecting this chemical disrupts exhaust flow to nudge the rocket left, right, up, or down."
+    },
+    {
+      "q": "ISRO is recovering this debris as part of its 'Debris Free Space Mission.' What is the target year for India to achieve zero new space debris?",
+      "a": "2030",
+      "options": ["2026", "2040"],
+      "explanation": "India aims for zero new debris by 2030 through better de-orbiting and recovery efforts."
+
+    },
+    {
+      "q": "Moving to future missions, what is the primary objective of the upcoming Chandrayaan-4 mission?",
+      "a": "Lunar sample return",
+      "options": ["Landing a human on the Moon", "Establishing a lunar base"],
+      "explanation": "Chandrayaan-4 aims to collect lunar soil and bring it safely back to Earth for the first time. "
+    },
+    {
+      "q": "How many distinct modules will make up the complex Chandrayaan-4 spacecraft to achieve this return trip?",
+      "a": "Five modules",
+      "options": ["Two modules", "Three modules"],
+      "explanation": "It includes Propulsion, Descender, Ascender, Transfer, and Re-entry modules."
+    },
+    {
+      "q": "Which specific region on the Moon's South Pole has been finalized as the landing site for Chandrayaan-4?",
+      "a": "Mons Mouton",
+      "options": ["Shackleton Crater", "Mare Tranquillitatis"],
+      "explanation": "Mons Mouton was chosen for its gentle slopes and safety for precision touchdown. "
+    },
+    {
+      "q": "While Chandrayaan-3's lander lived for 14 days, what is the intended mission life for the future Chandrayaan-5?",
+      "a": "Around 100 days",
+      "options": ["30 days", "One year"],
+      "explanation": "Chandrayaan-5 is being designed for a much longer operational life on the lunar surface."
+    },
+    {
+      "q": "How much will the upgraded rover of the future Chandrayaan missions weigh compared to the 25kg Pragyan rover?",
+      "a": "350 kg",
+      "options": ["100 kg", "500 kg"],
+      "explanation": "The new rover will be substantially larger to carry more scientific instruments."
+    },
+    {
+      "q": "Which heavy-lift rocket is being upgraded with a 22-tonne thrust engine to support these ambitious missions?",
+      "a": "LVM3",
+      "options": ["PSLV", "SSLV"],
+      "explanation": "The LVM3 (formerly GSLV Mk III) is India's 'Bahubali' rocket used for heavy missions. "
+    },
+    {
+      "q": "What is India's target year for landing its first 'Gaganyatri' (astronaut) on the lunar surface?",
+      "a": "2040",
+      "options": ["2030", "2050"],
+      "explanation": "Prime Minister Modi has set a target for an Indian moon landing by 2040."
+    }
+  ]
+}

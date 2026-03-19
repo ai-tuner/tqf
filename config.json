@@ -1,8 +1,54 @@
 {
     "topics": [
         
-        { "title": "Pi", "file": "pi.json" },
-  { "title": "Magnetic Forces", "file": "magnetic-forces.json" },
-{ "title": "Diode Design", "file": "diode-design.json" }
+        {
+            "title": "Telangana News 19.03.2026",
+            "file": "telangana-19-03-2026.json"
+        },
+        {
+            "title": "Telangana News 19th March",
+            "file": "telangana-news-19-mar.json"
+        },
+        {
+            "title": "Ustaad Bhagat Singh Movie Review",
+            "file": "ustaad-bhagat-singh.json"
+        },
+        {
+            "title": "Dhurandhar-2 Movie Review",
+            "file": "dhurandhar-2.json"
+        },
+        {
+            "title": "Strait Hormuz Shipping Crisis",
+            "file": "strait-hormuz-shipping-crisis.json"
+        },
+        {
+            "title": "Pi",
+            "file": "pi.json"
+        },
+        {
+            "title": "Magnetic Forces",
+            "file": "magnetic-forces.json"
+        },
+        {
+            "title": "Diode Design",
+            "file": "diode-design.json"
+        },
+        {
+            "title": "Human Brain",
+            "file": "human-brain.json"
+        },
+        {
+            "title": "Tulip Garden in Srinagar",
+            "file": "tulip-garden.json"
+        },
+        {
+            "title": "IPL 2026",
+            "file": "ipl-2026.json"
+        },
+        
+        {
+            "title": "India's Future in Space",
+            "file": "india-future-space.json"
+        }
     ]
 }

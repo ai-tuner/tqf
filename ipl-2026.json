@@ -1,0 +1,125 @@
+{
+  "fullNotes": "IPL 2026, the 19th edition of the league, is set to be the longest ever with an expanded 84-match schedule running from March 28 to May 31. The tournament begins at the M. Chinnaswamy Stadium with defending champions Royal Challengers Bengaluru (RCB) facing Sunrisers Hyderabad (SRH). Major pre-season updates include Ishan Kishan leading SRH as interim captain for the injured Pat Cummins and a landmark trade where Sanju Samson joined Chennai Super Kings (CSK) for INR 18 crore, while Ravindra Jadeja returned to the Rajasthan Royals (RR). RR has appointed Riyan Parag as their full-time captain. The season also highlights young prodigies like 14-year-old Vaibhav Sooryavanshi at RR, who recently led India to an U-19 World Cup title.",
+  "questions": [
+    {
+      "q": "Which edition of the Indian Premier League is scheduled to take place in 2026?",
+      "a": "19th Edition",
+      "options": ["15th Edition", "20th Edition"],
+      "explanation": "The 2026 season marks the 19th year of the world's biggest T20 league."
+    },
+    {
+      "q": "Expanding on the tournament's scale, how many total matches will be played in this 19th edition?",
+      "a": "84 matches",
+      "options": ["74 matches", "60 matches"],
+      "explanation": "IPL 2026 is the longest season yet, expanding from 74 to 84 matches."
+    },
+    {
+      "q": "With 84 matches scheduled, what is the specific date for the season's opening game?",
+      "a": "March 28, 2026",
+      "options": ["March 15, 2026", "April 1, 2026"],
+      "explanation": "The tournament officially kicks off on March 28 and will run until May 31."
+    },
+    {
+      "q": "On that opening date of March 28, which team will begin their title defense at home?",
+      "a": "Royal Challengers Bengaluru (RCB)",
+      "options": ["Mumbai Indians", "Chennai Super Kings"],
+      "explanation": "Defending champions RCB will host the first match of the season."
+    },
+    {
+      "q": "At which iconic venue will RCB host this opening match against Sunrisers Hyderabad?",
+      "a": "M. Chinnaswamy Stadium",
+      "options": ["Wankhede Stadium", "Narendra Modi Stadium"],
+      "explanation": "The match takes place in Bengaluru at the M. Chinnaswamy Stadium."
+    },
+    {
+      "q": "In the opposing dugout for the opener, who has been named the interim captain for Sunrisers Hyderabad (SRH)?",
+      "a": "Ishan Kishan",
+      "options": ["Abhishek Sharma", "Travis Head"],
+      "explanation": "Ishan Kishan was appointed interim leader just days before the season start."
+    },
+    {
+      "q": "Why did SRH need to appoint Ishan Kishan as an interim captain specifically?",
+      "a": "Pat Cummins is out with an injury",
+      "options": ["Pat Cummins was traded", "Pat Cummins retired"],
+      "explanation": "Regular captain Pat Cummins is recovering from an injury and will miss the early games."
+    },
+    {
+      "q": "While Kishan leads SRH temporarily, which player has been named his deputy (Vice-Captain)?",
+      "a": "Abhishek Sharma",
+      "options": ["Nitish Reddy", "Heinrich Klaasen"],
+      "explanation": "Abhishek Sharma will serve as the vice-captain until Cummins returns."
+    },
+    {
+      "q": "Moving to other team leadership, which player has been appointed as the full-time captain of Rajasthan Royals (RR)?",
+      "a": "Riyan Parag",
+      "options": ["Yashasvi Jaiswal", "Dhruv Jurel"],
+      "explanation": "Riyan Parag takes over the permanent captaincy following a major team trade."
+    },
+    {
+      "q": "What major trade prompted the leadership change at Rajasthan Royals?",
+      "a": "Sanju Samson was traded to CSK",
+      "options": ["Jos Buttler left the team", "Ravichandran Ashwin retired"],
+      "explanation": "Long-time RR captain Sanju Samson moved to Chennai in a landmark deal."
+    },
+    {
+      "q": "For what specific fee did Sanju Samson join the Chennai Super Kings (CSK)?",
+      "a": "INR 18 crore",
+      "options": ["INR 14 crore", "INR 25 crore"],
+      "explanation": "Samson moved to CSK at his existing league fee of 18 crore."
+    },
+    {
+      "q": "As part of the Samson trade, which legendary all-rounder returned to the Rajasthan Royals?",
+      "a": "Ravindra Jadeja",
+      "options": ["Shivam Dube", "MS Dhoni"],
+      "explanation": "Jadeja returns to his original 2008 franchise after 12 seasons with CSK."
+    },
+    {
+      "q": "What was Ravindra Jadeja's revised league fee upon joining Rajasthan Royals?",
+      "a": "INR 14 crore",
+      "options": ["INR 18 crore", "INR 10 crore"],
+      "explanation": "As part of the trade, Jadeja's fee was revised down from 18 crore to 14 crore."
+    },
+    {
+      "q": "Which other England all-rounder moved from CSK to RR as part of this same trade agreement?",
+      "a": "Sam Curran",
+      "options": ["Ben Stokes", "Moeen Ali"],
+      "explanation": "Sam Curran also joined the Royals in this multi-player swap."
+    },
+    {
+      "q": "Beyond trades, which 14-year-old batting sensation is making his debut for Rajasthan Royals this season?",
+      "a": "Vaibhav Sooryavanshi",
+      "options": ["Ayush Mhatre", "Prashant Veer"],
+      "explanation": "The young prodigy was signed by RR and is a major focus for the 2026 season."
+    },
+    {
+      "q": "Expanding on his recent success, which major trophy did Sooryavanshi help India win in February 2026?",
+      "a": "ICC U-19 World Cup",
+      "options": ["Asia Cup", "Champions Trophy"],
+      "explanation": "He was a key part of the squad that secured the U-19 World Cup title."
+    },
+    {
+      "q": "What individual record does the 14-year-old Sooryavanshi aim to break this IPL season?",
+      "a": "Chris Gayle's 175-run high score",
+      "options": ["Most sixes in an over", "Fastest century"],
+      "explanation": "Sooryavanshi explicitly stated his goal is to break Gayle's long-standing record."
+    },
+    {
+      "q": "Which veteran pacer also changed teams recently, moving from SRH to Lucknow Super Giants (LSG)?",
+      "a": "Mohammad Shami",
+      "options": ["Jasprit Bumrah", "Bhuvneshwar Kumar"],
+      "explanation": "Shami was traded to LSG to bolster their fast-bowling department."
+    },
+    {
+      "q": "Who will Mohammad Shami be playing under as the captain of Lucknow Super Giants?",
+      "a": "Rishabh Pant",
+      "options": ["KL Rahul", "Hardik Pandya"],
+      "explanation": "Rishabh Pant continues to lead the Lucknow franchise for the 2026 season."
+    },
+    {
+      "q": "Finally, who is the current captain of the defending champions, Royal Challengers Bengaluru?",
+      "a": "Rajat Patidar",
+      "options": ["Virat Kohli", "Faf du Plessis"],
+      "explanation": "Patidar led RCB to their first-ever title in 2025 and continues as captain."
+    }
+  ]
+}

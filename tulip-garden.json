@@ -1,0 +1,35 @@
+{
+  "fullNotes": "The Indira Gandhi Memorial Tulip Garden in Srinagar, Asia's largest tulip garden, was inaugurated on 16 March 2026 by Jammu and Kashmir Chief Minister Omar Abdullah, marking the start of the spring tourism season. The garden is spread over 74 acres at the foothills of the Zabarwan Range, overlooking Dal Lake.",
+  "questions": [
+    {
+      "q": "Which major attraction in Srinagar was recently inaugurated to mark the start of the spring tourism season?",
+      "a": "Indira Gandhi Memorial Tulip Garden",
+      "options": ["Shalimar Bagh", "Nishat Garden"],
+      "explanation": "This garden is famous for being the largest of its kind in Asia."
+    },
+    {
+      "q": "Who officially performed the inauguration of this garden on March 16, 2026?",
+      "a": "Omar Abdullah",
+      "options": ["Manoj Sinha", "Mehbooba Mufti"],
+      "explanation": "Chief Minister Omar Abdullah led the ceremony to welcome the spring season."
+    },
+    {
+      "q": "Expanding on its scale, how large is the area covered by this massive tulip garden?",
+      "a": "74 acres",
+      "options": ["25 acres", "100 acres"],
+      "explanation": "Its 74-acre expanse makes it the largest tulip garden in Asia."
+    },
+    {
+      "q": "Regarding its geographic setting, at the foothills of which mountain range is the garden located?",
+      "a": "Zabarwan Range",
+      "options": ["Pir Panjal Range", "Karakoram Range"],
+      "explanation": "The Zabarwan mountains provide a stunning backdrop to the blooming flowers."
+    },
+    {
+      "q": "What famous landmark does the garden overlook from its position at the Zabarwan foothills?",
+      "a": "Dal Lake",
+      "options": ["Wular Lake", "Pangong Lake"],
+      "explanation": "The view of Dal Lake from the garden is a primary reason for its popularity among tourists."
+    }
+  ]
+}

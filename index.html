@@ -34,7 +34,7 @@
             --text: #f5f5f5;
             --text-muted: #757575;
             --success: #d1d1d1;
-            --error: #424242; 
+            --error: #424242;
         }
 
         body {
@@ -245,6 +245,8 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
+            max-height: 100vh;
+            overflow-y: scroll;
         }
 
         .question-card {
@@ -333,20 +335,44 @@
         }
 
         @keyframes pulse {
-            0% { text-shadow: 0 0 5px var(--accent); }
-            50% { text-shadow: 0 0 20px var(--accent); }
-            100% { text-shadow: 0 0 5px var(--accent); }
+            0% {
+                text-shadow: 0 0 5px var(--accent);
+            }
+
+            50% {
+                text-shadow: 0 0 20px var(--accent);
+            }
+
+            100% {
+                text-shadow: 0 0 5px var(--accent);
+            }
+
+        }
+
+        .topics-list {
+            grid-template-columns: auto;
+            height: 50vh;
+            overflow-y: scroll;
+        }
+
+        #exp-box img {
+            max-width: 66%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 12px;
+           
         }
     </style>
 </head>
 
 <body id="main-body">
-<script>
-if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(() => console.log("Service Worker Registered"));
-    }
-</script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(() => console.log("Service Worker Registered"));
+        }
+    </script>
     <div id="mobile-menu-btn" onclick="toggleMobileNav()">QF</div>
 
     <nav id="side-nav">
@@ -386,7 +412,7 @@ if ('serviceWorker' in navigator) {
 
         <div id="panel-notes-content">
             <textarea id="session-notes"
-                style="width:100%; height:180px; background:var(--bg); color:white; border:1px solid var(--text-muted); padding:15px; resize:none; margin-bottom:25px;"
+                style="width:100%; height:180px; background:var(--bg); color:white; border:1px solid var(--text-muted); padding:15px; resize:vertical; margin-bottom:25px;"
                 placeholder="Takeaways..."></textarea>
             <div class="nav-label" style="margin-bottom:10px;">The Quest Factor - Report</div>
             <div id="ref-feed" class="ref-scroll-area"></div>
@@ -396,7 +422,7 @@ if ('serviceWorker' in navigator) {
             <input type="text" id="panel-topic-search"
                 style="width:100%; padding:12px; background:var(--bg); border:1px solid var(--text-muted); color:var(--accent); margin-bottom:20px;"
                 placeholder="Find Topics..." oninput="filterTopics(true)">
-            <div id="panel-topic-grid" style="display:grid; gap:10px;"></div>
+            <div class="topics-list" id="panel-topic-grid" style="display:grid; gap:10px;"></div>
         </div>
     </div>
 
@@ -414,7 +440,7 @@ if ('serviceWorker' in navigator) {
             <input type="text" id="topic-search"
                 style="width:100%; max-width:400px; padding:15px; background:var(--surface); border:1px solid var(--text-muted); color:var(--accent); margin-bottom:20px;"
                 placeholder="Find Topics..." oninput="filterTopics()">
-            <div id="topic-grid" style="display:grid; gap:10px;"></div>
+            <div class="topics-list" id="topic-grid" style="display:grid; gap:10px;"></div>
         </div>
 
         <div class="main-container" id="quiz-area">
@@ -440,9 +466,9 @@ if ('serviceWorker' in navigator) {
 
     <script>
 
-        
-    
-  
+
+
+
 
         let currentLoadId = 0;
         let allTopics = [], topicData = { questions: [], fullNotes: "" };
@@ -545,69 +571,69 @@ if ('serviceWorker' in navigator) {
         }
 
         async function typeWriter(el, text, speed, loadId) {
-    el.innerHTML = "";
-    for (let char of text) {
-        // Critical Check: if a new load has started, stop this execution immediately
-        if (loadId !== currentLoadId) return false; 
-        
-        el.innerHTML += char;
-        await new Promise(r => setTimeout(r, speed));
-    }
-    return true;
-}
+            el.innerHTML = "";
+            for (let char of text) {
+                // Critical Check: if a new load has started, stop this execution immediately
+                if (loadId !== currentLoadId) return false;
+
+                el.innerHTML += char;
+                await new Promise(r => setTimeout(r, speed));
+            }
+            return true;
+        }
 
         async function loadQuestion() {
-    const q = topicData.questions[currentIndex];
-    const area = document.getElementById('dynamic-content');
-    saveGameState();
+            const q = topicData.questions[currentIndex];
+            const area = document.getElementById('dynamic-content');
+            saveGameState();
 
-    const steps = document.querySelectorAll('.progress-step');
-    steps.forEach((step, i) => {
-        step.classList.remove('active');
-        if (i === currentIndex) step.classList.add('active');
-        if (topicData.questions[i].solved) step.classList.add('completed');
-    });
+            const steps = document.querySelectorAll('.progress-step');
+            steps.forEach((step, i) => {
+                step.classList.remove('active');
+                if (i === currentIndex) step.classList.add('active');
+                if (topicData.questions[i].solved) step.classList.add('completed');
+            });
 
-    if (q.viewed) {
-        // ... (Keep your existing 'if viewed' logic here)
-        area.innerHTML = `<div class="question-card">${q.q}</div><div id="options-box"></div><div id="exp-box" style="margin-top:20px; color:var(--success); background:rgba(215, 255, 208, 0.25); padding:15px; font-size:1.2rem; font-style:italic; border-right:8px solid var(--accent); display:${q.solved ? 'block' : 'none'};">${q.explanation || ''}</div>`;
-        const optBox = document.getElementById('options-box');
-        q.shuffled.forEach(opt => {
-            const btn = document.createElement('button');
-            btn.className = 'opt-btn';
-            if (q.solved && opt === q.a) btn.classList.add('correct');
-            if (q.solved && opt === q.userSelection && opt !== q.a) btn.classList.add('wrong');
-            btn.innerText = opt;
-            btn.onclick = () => handleAnswer(btn, opt, q);
-            optBox.appendChild(btn);
-        });
-    } else {
-        const myLoadId = ++currentLoadId; 
-        area.innerHTML = `<div class="question-card" id="q-text"></div><div id="options-box"></div><div id="exp-box" style="display:none; margin-top:20px; color:var(--success); background:rgba(215, 255, 208, 0.25); padding:15px; font-size:1.2rem; font-style:italic; border-right:8px solid var(--accent);"></div>`;
-        
-        const proceed = await typeWriter(document.getElementById('q-text'), q.q, 60, myLoadId);
-        if (!proceed) return;
+            if (q.viewed) {
+                // ... (Keep your existing 'if viewed' logic here)
+                area.innerHTML = `<div class="question-card">${q.q}</div><div id="options-box"></div><div id="exp-box" style="margin-top:20px; color:var(--success); background:rgba(215, 255, 208, 0.25); padding:15px; font-size:1.2rem; font-style:italic; border-right:8px solid var(--accent); display:${q.solved ? 'block' : 'none'};">${q.explanation || ''}</div>`;
+                const optBox = document.getElementById('options-box');
+                q.shuffled.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'opt-btn';
+                    if (q.solved && opt === q.a) btn.classList.add('correct');
+                    if (q.solved && opt === q.userSelection && opt !== q.a) btn.classList.add('wrong');
+                    btn.innerText = opt;
+                    btn.onclick = () => handleAnswer(btn, opt, q);
+                    optBox.appendChild(btn);
+                });
+            } else {
+                const myLoadId = ++currentLoadId;
+                area.innerHTML = `<div class="question-card" id="q-text"></div><div id="options-box"></div><div id="exp-box" style="display:none; margin-top:20px; color:var(--success); background:rgba(215, 255, 208, 0.25); padding:15px; font-size:1.2rem; font-style:italic; border-right:8px solid var(--accent);"></div>`;
 
-        const optBox = document.getElementById('options-box');
-        for (let opt of q.shuffled) {
-            // Check before creating each button
-            if (myLoadId !== currentLoadId) return; 
-            
-            const btn = document.createElement('button');
-            btn.className = 'opt-btn';
-            optBox.appendChild(btn);
-            
-            const optProceed = await typeWriter(btn, opt, 60, myLoadId);
-            // If the user clicked 'Back' while this specific button was typing, stop everything
-            if (!optProceed) return; 
-            
-            btn.onclick = () => handleAnswer(btn, opt, q);
+                const proceed = await typeWriter(document.getElementById('q-text'), q.q, 60, myLoadId);
+                if (!proceed) return;
+
+                const optBox = document.getElementById('options-box');
+                for (let opt of q.shuffled) {
+                    // Check before creating each button
+                    if (myLoadId !== currentLoadId) return;
+
+                    const btn = document.createElement('button');
+                    btn.className = 'opt-btn';
+                    optBox.appendChild(btn);
+
+                    const optProceed = await typeWriter(btn, opt, 60, myLoadId);
+                    // If the user clicked 'Back' while this specific button was typing, stop everything
+                    if (!optProceed) return;
+
+                    btn.onclick = () => handleAnswer(btn, opt, q);
+                }
+                q.viewed = true;
+                saveGameState();
+            }
+            document.getElementById('review-nav-btn').style.display = (currentIndex === topicData.questions.length - 1) ? 'block' : 'none';
         }
-        q.viewed = true;
-        saveGameState();
-    }
-    document.getElementById('review-nav-btn').style.display = (currentIndex === topicData.questions.length - 1) ? 'block' : 'none';
-}
 
         function handleAnswer(btn, opt, q) {
             if (q.solved) return;
@@ -628,7 +654,7 @@ if ('serviceWorker' in navigator) {
         function showExplanation() {
             const q = topicData.questions[currentIndex];
             const exp = document.getElementById('exp-box');
-            if (exp) { exp.style.display = 'block'; exp.innerText = q.explanation; }
+            if (exp) { exp.style.display = 'block'; exp.innerHTML = q.explanation; }
         }
 
         async function exportMasterPDF() {
@@ -676,7 +702,7 @@ if ('serviceWorker' in navigator) {
             let correct = 0;
             topicData.questions.forEach(q => { if (q.userSelection === q.a) correct++; });
             textBlock(`Score: ${correct} / ${topicData.questions.length}`, 13, "bold", 12);
-            
+
             textBlock("Detailed Review", 16, "bold", 6);
             topicData.questions.forEach((q, i) => {
                 textBlock(`Question ${i + 1}`, 13, "bold", 2);

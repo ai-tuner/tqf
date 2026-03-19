@@ -1,0 +1,125 @@
+{
+  "fullNotes": "The human brain is the most complex biological structure known, acting as the command center for the entire nervous system. Weighing approximately 1.4 kilograms, it contains roughly 86 billion neurons that communicate through trillions of synapses. Architecturally, it is divided into three main regions: the hindbrain (controlling vital functions like breathing), the midbrain, and the forebrain. The forebrain includes the cerebral cortex, which is split into two hemispheres and four specialized lobes: the frontal (reasoning), parietal (sensory), temporal (auditory), and occipital (visual). A critical aspect of brain function is neuroplasticity—the organ's ability to reorganize itself by forming new neural connections throughout life in response to learning or injury. Information processing occurs via electrochemical signals; when an action potential reaches a synapse, neurotransmitters like dopamine or serotonin are released to transmit messages. The brain is also protected by the Blood-Brain Barrier (BBB), a highly selective semipermeable border that prevents solutes in the circulating blood from non-selectively crossing into the central nervous system. Despite representing only 2% of body weight, the brain consumes about 20% of the body's total energy, primarily in the form of glucose, to maintain these intricate electrical gradients.",
+  "questions": [
+    {
+      "q": "What is considered the primary 'command center' for the entire human nervous system?",
+      "a": "The Human Brain",
+      "options": ["The Spinal Cord", "The Heart"],
+      "explanation": "The brain integrates sensory information and coordinates nearly all bodily functions."
+    },
+    {
+      "q": "Expanding on its physical properties, approximately how much does this 'command center' weigh?",
+      "a": "1.4 kilograms",
+      "options": ["0.5 kilograms", "3.2 kilograms"],
+      "explanation": "Despite its small weight, it manages the most complex tasks in the known universe."
+    },
+    {
+      "q": "Within that 1.4kg mass, how many specialized cells called neurons are estimated to exist?",
+      "a": "86 billion",
+      "options": ["10 million", "500 billion"],
+      "explanation": "These 86 billion neurons form the fundamental processing units of the brain."
+    },
+    {
+      "q": "Since these 86 billion neurons must interact, what are the trillions of connection points between them called?",
+      "a": "Synapses",
+      "options": ["Axons", "Dendrites"],
+      "explanation": "Synapses are the gaps where neurons pass signals to one another."
+    },
+    {
+      "q": "Looking at the brain's architecture, it is divided into how many main regions?",
+      "a": "Three",
+      "options": ["Two", "Five"],
+      "explanation": "The brain is broadly categorized into the hindbrain, midbrain, and forebrain."
+    },
+    {
+      "q": "Starting with the first region, what is the primary responsibility of the hindbrain?",
+      "a": "Vital functions like breathing",
+      "options": ["Creative thinking", "Visual processing"],
+      "explanation": "The hindbrain manages 'autonomic' tasks necessary for survival."
+    },
+    {
+      "q": "Moving to the forebrain, which specific part is responsible for higher-level functions and split into two hemispheres?",
+      "a": "Cerebral Cortex",
+      "options": ["Cerebellum", "Brainstem"],
+      "explanation": "The cortex is the outer layer where most complex processing occurs."
+    },
+    {
+      "q": "The cerebral cortex is further organized into how many specialized lobes?",
+      "a": "Four",
+      "options": ["Three", "Six"],
+      "explanation": "These are the frontal, parietal, temporal, and occipital lobes."
+    },
+    {
+      "q": "Which of these four lobes is specifically dedicated to reasoning and higher thought?",
+      "a": "Frontal Lobe",
+      "options": ["Occipital Lobe", "Parietal Lobe"],
+      "explanation": "The frontal lobe is the seat of personality and decision-making."
+    },
+    {
+      "q": "Contrasting the frontal lobe, which lobe is primarily responsible for processing sensory information?",
+      "a": "Parietal Lobe",
+      "options": ["Temporal Lobe", "Frontal Lobe"],
+      "explanation": "The parietal lobe handles touch, spatial orientation, and navigation."
+    },
+    {
+      "q": "Which lobe, located near the ears, handles auditory processing?",
+      "a": "Temporal Lobe",
+      "options": ["Occipital Lobe", "Frontal Lobe"],
+      "explanation": "The temporal lobe is essential for hearing and language comprehension."
+    },
+    {
+      "q": "Finally, which lobe is located at the back of the head to process visual information?",
+      "a": "Occipital Lobe",
+      "options": ["Parietal Lobe", "Temporal Lobe"],
+      "explanation": "The occipital lobe translates signals from the eyes into images."
+    },
+    {
+      "q": "Beyond fixed structures, what is the brain's ability to reorganize itself and form new connections called?",
+      "a": "Neuroplasticity",
+      "options": ["Neurogenesis", "Synaptic Pruning"],
+      "explanation": "Neuroplasticity allows the brain to learn and recover from injuries."
+    },
+    {
+      "q": "How does the brain process information through these connections?",
+      "a": "Electrochemical signals",
+      "options": ["Purely hydraulic pressure", "Mechanical vibrations"],
+      "explanation": "The brain uses a combination of electricity (action potentials) and chemicals."
+    },
+    {
+      "q": "When an electrical signal reaches a synapse, what chemicals are released to transmit the message?",
+      "a": "Neurotransmitters",
+      "options": ["Hormones", "Enzymes"],
+      "explanation": "Neurotransmitters bridge the gap between two neurons."
+    },
+    {
+      "q": "Dopamine and which other chemical are common examples of these neurotransmitters?",
+      "a": "Serotonin",
+      "options": ["Adrenaline", "Insulin"],
+      "explanation": "Serotonin is a key neurotransmitter for mood and signal regulation."
+    },
+    {
+      "q": "To protect this delicate chemistry, what is the name of the selective border that filters blood entering the brain?",
+      "a": "Blood-Brain Barrier (BBB)",
+      "options": ["Meninges", "Skull"],
+      "explanation": "The BBB prevents toxins and pathogens in the blood from reaching brain tissue."
+    },
+    {
+      "q": "Despite its small size (2% of body weight), what percentage of the body's total energy does the brain consume?",
+      "a": "20%",
+      "options": ["5%", "50%"],
+      "explanation": "The brain is highly 'expensive' to run due to constant electrical activity."
+    },
+    {
+      "q": "What is the primary source of this energy consumed by the brain?",
+      "a": "Glucose",
+      "options": ["Proteins", "Fats"],
+      "explanation": "The brain relies almost exclusively on glucose (sugar) for fuel."
+    },
+    {
+      "q": "Why is this constant supply of glucose and energy so critical for the neurons?",
+      "a": "To maintain electrical gradients",
+      "options": ["To grow the skull", "To produce heat"],
+      "explanation": "Energy is needed to reset the electrical 'charge' of neurons so they can fire again."
+    }
+  ]
+}

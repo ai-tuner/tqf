@@ -1,0 +1,125 @@
+{
+  "fullNotes": "The 2026 Strait of Hormuz crisis began in early March following military strikes and subsequent IRGC threats that effectively closed the 33km-wide waterway. Over 20% of global oil and significant LNG/LPG volumes are currently stranded, pushing Brent crude to a peak of $126/bbl. India faces extreme vulnerability, importing 50% of its crude and 91% of its cooking gas (LPG) via this route. The Indian government has responded with the ₹497 crore RELIEF scheme for exporters and is planning a ₹1,000 crore war-risk insurance pool to maintain trade continuity.",
+  "questions": [
+    {
+      "q": "Which critical maritime chokepoint was effectively closed to tanker traffic on March 2, 2026?",
+      "a": "Strait of Hormuz",
+      "options": ["Suez Canal", "Strait of Malacca"],
+      "explanation": "The IRGC officially confirmed the closure following a series of attacks on merchant vessels. [Image: Satellite view of the 33km-wide Strait of Hormuz]"
+    },
+    {
+      "q": "Approximately what percentage of the world's daily oil supply passes through this narrow strait?",
+      "a": "20%",
+      "options": ["5%", "50%"],
+      "explanation": "Handling roughly a fifth of global seaborne oil, it is considered the world's most critical energy chokepoint."
+    },
+    {
+      "q": "What tragic event involving Indian nationals occurred on March 1, 2026, just before the full closure?",
+      "a": "Two Indian crew members were killed on the tanker Skylight",
+      "options": ["A ship was hijacked", "An Indian port was attacked"],
+      "explanation": "The tanker was struck by a projectile north of Khasab, Oman, marking one of the first fatal incidents of the crisis."
+    },
+    {
+      "q": "How many commercial ships were reportedly stranded or anchored outside the strait by mid-March 2026?",
+      "a": "Over 150 ships",
+      "options": ["50 ships", "500 ships"],
+      "explanation": "Vessels have stopped transiting the area to avoid being targeted by drone boats or missiles."
+    },
+    {
+      "q": "What was the peak price of Brent crude recorded on March 8, 2026, during this supply shock?",
+      "a": "$126 per barrel",
+      "options": ["$90 per barrel", "$150 per barrel"],
+      "explanation": "Prices surged at their fastest rate in history due to fears of a prolonged total blockade."
+    },
+    {
+      "q": "Expanding on India's energy dependency, roughly how much of India's total crude oil imports pass through this strait?",
+      "a": "About 50%",
+      "options": ["20%", "80%"],
+      "explanation": "India imports roughly 2.5–2.7 million barrels per day through the Strait of Hormuz."
+    },
+    {
+      "q": "Which specific energy product is considered India's 'most vulnerable point' with 91% of supply coming from the Gulf?",
+      "a": "LPG (Cooking Gas)",
+      "options": ["Aviation Turbine Fuel", "Diesel"],
+      "explanation": "Unlike crude, India has limited strategic reserves for LPG, making it highly sensitive to disruptions."
+    },
+    {
+      "q": "Due to the LPG shortage, what recent price hike did Indian households face per domestic cylinder?",
+      "a": "₹60 per cylinder",
+      "options": ["₹10 per cylinder", "₹200 per cylinder"],
+      "explanation": "The supply crunch has led to immediate retail price increases across the country."
+    },
+    {
+      "q": "Which major LNG producer has invoked 'force majeure' and halted production for India-bound shipments?",
+      "a": "Qatar Energy",
+      "options": ["Gazprom", "ExxonMobil"],
+      "explanation": "Qatar supplies nearly 50% of India's LNG, and its suspension has severely impacted the fertilizer and power sectors."
+    },
+    {
+      "q": "To support struggling exporters, what is the name of the ₹497 crore relief scheme launched by the Indian government?",
+      "a": "RELIEF scheme",
+      "options": ["SHIELD scheme", "EXIM package"],
+      "explanation": "RELIEF stands for Resilience and Logistics Intervention for Export Facilitation."
+    },
+    {
+      "q": "Expanding on the RELIEF scheme, what maximum risk coverage does it provide for existing ECGC credit insurance?",
+      "a": "Up to 100% risk coverage",
+      "options": ["Up to 50%", "Up to 75%"],
+      "explanation": "The government is absorbing additional costs to maintain exporter confidence during the conflict."
+    },
+    {
+      "q": "What is the estimated corpus of the proposed government-backed 'war-risk' insurance fund?",
+      "a": "₹1,000 crore",
+      "options": ["₹500 crore", "₹5,000 crore"],
+      "explanation": "The fund would provide a backstop for insurers as international reinsurers have withdrawn from the region."
+    },
+    {
+      "q": "Which state-run entity is proposed to manage this ₹1,000 crore war-risk insurance pool?",
+      "a": "GIC Re (General Insurance Corporation)",
+      "options": ["LIC", "State Bank of India"],
+      "explanation": "GIC Re would act as the pool manager to ensure continuity of cover for India-bound cargo."
+    },
+    {
+      "q": "Besides energy, India imports 40% of which essential agricultural input directly from the Middle East?",
+      "a": "Fertilizers",
+      "options": ["Pesticides", "Organic seeds"],
+      "explanation": "Disruptions here are expected to impact global food prices and inflation by late 2026."
+    },
+    {
+      "q": "What impact does every $10 increase in oil prices have on India's GDP growth according to analysts?",
+      "a": "Cuts growth by 0.1-0.2 percentage points",
+      "options": ["Increases growth by 1%", "No impact on GDP"],
+      "explanation": "Rising energy costs act as a major drag on India's manufacturing and consumption sectors."
+    },
+    {
+      "q": "Which currency has recently crossed the 92/USD mark due to the crisis and rising import bills?",
+      "a": "Indian Rupee (INR)",
+      "options": ["Euro", "Japanese Yen"],
+      "explanation": "The 'double whammy' of high oil prices and a weak Rupee has created severe 'imported inflation'."
+    },
+    {
+      "q": "What temporary measure has the US Treasury issued to prevent a total fuel collapse in India?",
+      "a": "A 30-day waiver to buy stranded Russian oil",
+      "options": ["A loan of $10 billion", "A free supply of shale gas"],
+      "explanation": "This allows India to access alternative oil supplies currently stuck at sea."
+    },
+    {
+      "q": "Which bypass pipeline in the UAE could potentially reroute 1.5 million barrels of oil per day?",
+      "a": "ADCOP (Habshan-Fujairah) pipeline",
+      "options": ["TAPLINE", "East-West Pipeline"],
+      "explanation": "The pipeline ends at Fujairah, outside the Strait of Hormuz, providing a partial alternative route."
+    },
+    {
+      "q": "Why can bypass pipelines not fully neutralize the crisis impact?",
+      "a": "They cover only about a quarter of the total disrupted volume",
+      "options": ["They are also blocked", "They are too expensive"],
+      "explanation": "Existing infrastructure can only handle 4-7 mb/d of the 15-20 mb/d typically transiting the strait."
+    },
+    {
+      "q": "Finally, why has the US Navy not yet cleared the strait for commercial traffic?",
+      "a": "Concerns over naval mines and shore-based missiles",
+      "options": ["They are out of fuel", "Lack of interest"],
+      "explanation": "Reports of Iranian naval mining and sophisticated anti-ship missiles have made the waterway too high-risk for now. [Image: Concept of naval mining in a narrow strait]"
+    }
+  ]
+}
