@@ -411,12 +411,10 @@
             top: 0;
             left: 0;
             width: 100vw;
-            /* Physically stop the canvas before it touches the nav bar */
             height: calc(100vh - 90px);
+            /* Must match the JS -90 */
             z-index: 5;
-            /* Low positive number */
             pointer-events: none;
-            /* Allows scrolling and clicking when OFF */
             display: block;
         }
 
@@ -930,17 +928,20 @@
 
         // Resize canvas to fit screen
         function resizeCanvas() {
-            // 90px is a safe buffer for mobile nav bars + safe area
-            const navHeight = 90;
+            // 1. Get the actual size the canvas is occupying in the browser
+            const displayWidth = window.innerWidth;
+            const displayHeight = window.innerHeight - 90; // Matches your CSS calc
 
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight - navHeight;
+            // 2. Set the internal drawing resolution to match that display size
+            canvas.width = displayWidth;
+            canvas.height = displayHeight;
 
-            // Canvas settings reset on resize, so we must re-declare them
+            // 3. Re-apply line styles (Canvas resets these when width/height change)
             ctx.lineCap = 'round';
             ctx.lineJoin = 'round';
             ctx.lineWidth = 3;
 
+            // Restore the color from the active swatch
             const activeSwatch = document.querySelector('.swatch.active');
             if (activeSwatch) {
                 ctx.strokeStyle = activeSwatch.style.backgroundColor;
@@ -989,18 +990,22 @@
 
             const rect = canvas.getBoundingClientRect();
 
-            // Support both mouse and touch
+            // Get raw screen coordinates
             const clientX = e.clientX || (e.touches && e.touches[0].clientX);
             const clientY = e.clientY || (e.touches && e.touches[0].clientY);
 
-            // If the click happened inside the nav bar area, ignore it
+            // Stop drawing if we slide into the nav bar area
             if (clientY > rect.bottom) {
                 stopDrawing();
                 return;
             }
 
-            const x = (clientX - rect.left);
-            const y = (clientY - rect.top);
+            /* CRITICAL FIX: 
+               We calculate the position relative to the top-left of the canvas (clientX - rect.left),
+               then multiply it by the ratio of internal pixels vs. display pixels.
+            */
+            const x = (clientX - rect.left) * (canvas.width / rect.width);
+            const y = (clientY - rect.top) * (canvas.height / rect.height);
 
             ctx.lineTo(x, y);
             ctx.stroke();
