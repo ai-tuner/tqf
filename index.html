@@ -409,12 +409,13 @@
             left: 0;
             width: 100vw;
             /* Stops the canvas before the nav bar so buttons remain clickable */
-            height: calc(100vh - 80px);
+            height: calc(100vh - 85px);
             z-index: 9998;
             pointer-events: none;
             /* Allows scrolling by default */
             display: block;
             cursor: crosshair;
+            margin-bottom: 85px;
         }
 
         #drawing-canvas.active {
@@ -925,23 +926,24 @@
 
         // Resize canvas to fit screen
         function resizeCanvas() {
-            // Determine the physical size it should occupy
-            const displayWidth = window.innerWidth;
-            const displayHeight = window.innerHeight - 80;
+    const displayWidth = window.innerWidth;
+    // Match the 85px height reduction from your CSS
+    const displayHeight = window.innerHeight - 85; 
 
-            // Set the internal drawing buffer to match the CSS display size
-            canvas.width = displayWidth;
-            canvas.height = displayHeight;
+    canvas.width = displayWidth;
+    canvas.height = displayHeight;
 
-            // Re-apply context settings (these reset when width/height change)
-            ctx.lineCap = 'round';
-            ctx.lineJoin = 'round'; // Smoother corners
-            ctx.lineWidth = 3;
+    // Reset styles as they clear on width/height change
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.lineWidth = 3;
 
-            // Maintain the currently selected color
-            const activeSwatch = document.querySelector('.swatch.active');
-            ctx.strokeStyle = activeSwatch ? activeSwatch.style.backgroundColor : '#0000ff';
-        }
+    const activeSwatch = document.querySelector('.swatch.active');
+    if (activeSwatch) {
+        // Convert RGB to HEX if necessary or use the style property
+        ctx.strokeStyle = activeSwatch.style.backgroundColor;
+    }
+}
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
