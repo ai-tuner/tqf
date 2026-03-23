@@ -130,6 +130,8 @@
             display: flex;
             justify-content: space-between;
             gap: 8px;
+            overflow-x: scroll;
+            scrollbar-width: none;
         }
 
         #dynamic-content {
@@ -411,6 +413,7 @@
             z-index: 9998;
             pointer-events: none;
             /* Allows scrolling by default */
+            display: block;
             cursor: crosshair;
         }
 
@@ -579,11 +582,11 @@
                     <button class="draw-btn-nav" onclick="clearCanvas()">Clear</button>
 
                     <div class="color-picker">
-                        <div class="swatch active" style="background: #0000ff;" onclick="changeColor('#0000ff', this)">
+                        <div class="swatch active" style="background: #235cbe;" onclick="changeColor('#235cbe', this)">
                         </div>
-                        <div class="swatch" style="background: #ff0000;" onclick="changeColor('#ff0000', this)"></div>
-                        <div class="swatch" style="background: #00ff00;" onclick="changeColor('#00ff00', this)"></div>
-                        <div class="swatch" style="background: #ffff00;" onclick="changeColor('#ffff00', this)"></div>
+                        <div class="swatch" style="background: #ff7777;" onclick="changeColor('#ff7777', this)"></div>
+                        <div class="swatch" style="background: #9fff9f;" onclick="changeColor('#9fff9f', this)"></div>
+                        <div class="swatch" style="background: #ffff9d;" onclick="changeColor('#ffff9d', this)"></div>
                     </div>
 
                     <button class="sidebar-btn gold" onclick="showExplanation()">Hint</button>
@@ -922,11 +925,22 @@
 
         // Resize canvas to fit screen
         function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight - 80;
+            // Determine the physical size it should occupy
+            const displayWidth = window.innerWidth;
+            const displayHeight = window.innerHeight - 80;
+
+            // Set the internal drawing buffer to match the CSS display size
+            canvas.width = displayWidth;
+            canvas.height = displayHeight;
+
+            // Re-apply context settings (these reset when width/height change)
             ctx.lineCap = 'round';
+            ctx.lineJoin = 'round'; // Smoother corners
             ctx.lineWidth = 3;
-            ctx.strokeStyle = '#0000ff'; // Neon green for visibility
+
+            // Maintain the currently selected color
+            const activeSwatch = document.querySelector('.swatch.active');
+            ctx.strokeStyle = activeSwatch ? activeSwatch.style.backgroundColor : '#0000ff';
         }
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
@@ -969,10 +983,16 @@
         function draw(e) {
             if (!drawing || !penActive) return;
 
-            // Handle both Mouse and Touch
             const rect = canvas.getBoundingClientRect();
-            const x = (e.clientX || e.touches[0].clientX) - rect.left;
-            const y = (e.clientY || e.touches[0].clientY) - rect.top;
+
+            // Get raw coordinates from mouse or touch
+            const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+            const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+
+            // Calculate position relative to the canvas's actual position on screen
+            // and scale it based on internal canvas resolution
+            const x = (clientX - rect.left) * (canvas.width / rect.width);
+            const y = (clientY - rect.top) * (canvas.height / rect.height);
 
             ctx.lineTo(x, y);
             ctx.stroke();
