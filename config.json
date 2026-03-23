@@ -2,6 +2,10 @@
     "topics": [
         
         {
+            "title": "Defining the Foundation (GDP)",
+            "file": "gdp-foundation.json"
+        },
+        {
             "title": "Telangana News 19.03.2026",
             "file": "telangana-19-03-2026.json"
         },

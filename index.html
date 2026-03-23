@@ -361,7 +361,132 @@
             display: block;
             margin: 10px auto;
             border-radius: 12px;
-           
+
+        }
+
+        /* Target images and videos inside the dynamic content area */
+        #dynamic-content img,
+        #dynamic-content video #dynamic-content iframe {
+            display: block;
+            /* Required for margin auto to work */
+            margin: 2px auto;
+            /* Centers horizontally and adds vertical breathing room */
+            max-width: 90%;
+            /* Prevents overflow on mobile */
+            max-height: 30vh;
+        }
+
+        /* Specifically target media inside option buttons */
+        .opt-btn {
+            display: flex;
+            flex-direction: column;
+            /* Stack text and media vertically */
+            align-items: center;
+            /* Center items horizontally */
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            /* Space between text and image */
+            padding: 15px;
+        }
+
+        .opt-btn img,
+        .opt-btn video {
+            margin: 0 auto;
+            /* Remove the large 20px margin for buttons */
+            max-height: 200px;
+            /* Keep button media at a reasonable size */
+        }
+
+        /* canvas writing on screen*/
+
+        /* --- DRAWING OVERLAY --- */
+        #drawing-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            /* Stops the canvas before the nav bar so buttons remain clickable */
+            height: calc(100vh - 80px);
+            z-index: 9998;
+            pointer-events: none;
+            /* Allows scrolling by default */
+            cursor: crosshair;
+        }
+
+        #drawing-canvas.active {
+            pointer-events: all;
+            /* Enables drawing mode */
+        }
+
+        /* Style for the pen button specifically inside the navigator */
+        .draw-btn-nav {
+            flex: 1;
+            white-space: nowrap;
+            padding: 10px 5px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(175, 175, 175, 0.2);
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: 0.2s;
+            text-align: center;
+        }
+
+        .draw-tools {
+            position: fixed;
+            top: 10px;
+            right: 100px;
+            z-index: 10001;
+            display: flex;
+            gap: 5px;
+            background: var(--surface);
+            padding: 5px;
+            border-radius: 8px;
+            border: 1px solid var(--accent);
+        }
+
+        .draw-btn {
+            padding: 5px 10px;
+            font-size: 12px;
+            background: var(--bg);
+            color: var(--text);
+            border: 1px solid var(--text-muted);
+            cursor: pointer;
+        }
+
+        .draw-btn.active {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        /* Color Swatch Container */
+        .color-picker {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+
+        .swatch {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        .swatch:hover {
+            transform: scale(1.2);
+        }
+
+        .swatch.active {
+            border-color: white;
+            box-shadow: 0 0 5px white;
         }
     </style>
 </head>
@@ -449,7 +574,20 @@
             <div class="mobile-nav-wrapper">
                 <div class="navigator">
                     <button class="sidebar-btn" onclick="prevQuestion()">Back</button>
+
+                    <button class="draw-btn-nav" id="pen-toggle" onclick="togglePen()">Pen: OFF</button>
+                    <button class="draw-btn-nav" onclick="clearCanvas()">Clear</button>
+
+                    <div class="color-picker">
+                        <div class="swatch active" style="background: #0000ff;" onclick="changeColor('#0000ff', this)">
+                        </div>
+                        <div class="swatch" style="background: #ff0000;" onclick="changeColor('#ff0000', this)"></div>
+                        <div class="swatch" style="background: #00ff00;" onclick="changeColor('#00ff00', this)"></div>
+                        <div class="swatch" style="background: #ffff00;" onclick="changeColor('#ffff00', this)"></div>
+                    </div>
+
                     <button class="sidebar-btn gold" onclick="showExplanation()">Hint</button>
+
                     <button class="sidebar-btn" onclick="nextQuestion()">Next</button>
                 </div>
                 <div class="navigator-tools">
@@ -463,6 +601,9 @@
             </div>
         </div>
     </div>
+
+    <canvas id="drawing-canvas"></canvas>
+
 
     <script>
 
@@ -571,11 +712,16 @@
         }
 
         async function typeWriter(el, text, speed, loadId) {
+            // If the text contains HTML tags (like <img> or <video>), 
+            // render it immediately instead of typing it out to avoid broken tags.
+            if (/<[a-z][\s\S]*>/i.test(text)) {
+                el.innerHTML = text;
+                return true;
+            }
+
             el.innerHTML = "";
             for (let char of text) {
-                // Critical Check: if a new load has started, stop this execution immediately
                 if (loadId !== currentLoadId) return false;
-
                 el.innerHTML += char;
                 await new Promise(r => setTimeout(r, speed));
             }
@@ -603,7 +749,7 @@
                     btn.className = 'opt-btn';
                     if (q.solved && opt === q.a) btn.classList.add('correct');
                     if (q.solved && opt === q.userSelection && opt !== q.a) btn.classList.add('wrong');
-                    btn.innerText = opt;
+                    btn.innerHTML = opt;
                     btn.onclick = () => handleAnswer(btn, opt, q);
                     optBox.appendChild(btn);
                 });
@@ -769,7 +915,94 @@
         }
 
         document.addEventListener('dblclick', () => { if (document.body.classList.contains('record-mode')) toggleRecordUI(); });
+        const canvas = document.getElementById('drawing-canvas');
+        const ctx = canvas.getContext('2d');
+        let drawing = false;
+        let penActive = false;
+
+        // Resize canvas to fit screen
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight - 80;
+            ctx.lineCap = 'round';
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = '#0000ff'; // Neon green for visibility
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function togglePen() {
+            console.log("Toggle Pen clicked!"); // Debug line
+            penActive = !penActive;
+            const canvas = document.getElementById('drawing-canvas');
+            const btn = document.getElementById('pen-toggle');
+
+            if (penActive) {
+                canvas.style.pointerEvents = "all"; // Direct style manipulation is safer
+                btn.innerText = "Pen: ON";
+                btn.style.background = "var(--accent)";
+                btn.style.color = "var(--bg)";
+            } else {
+                canvas.style.pointerEvents = "none";
+                btn.innerText = "Pen: OFF";
+                btn.style.background = "var(--bg)";
+                btn.style.color = "var(--text)";
+            }
+        }
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        // Drawing Logic
+        function startDrawing(e) {
+            if (!penActive) return;
+            drawing = true;
+            draw(e);
+        }
+
+        function stopDrawing() {
+            drawing = false;
+            ctx.beginPath();
+        }
+
+        function draw(e) {
+            if (!drawing || !penActive) return;
+
+            // Handle both Mouse and Touch
+            const rect = canvas.getBoundingClientRect();
+            const x = (e.clientX || e.touches[0].clientX) - rect.left;
+            const y = (e.clientY || e.touches[0].clientY) - rect.top;
+
+            ctx.lineTo(x, y);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+        }
+
+        // Event Listeners
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+
+        canvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDrawing(e); }, { passive: false });
+        canvas.addEventListener('touchmove', (e) => { e.preventDefault(); draw(e); }, { passive: false });
+        canvas.addEventListener('touchend', stopDrawing);
+        function changeColor(color, el) {
+            // 1. Update the drawing context color
+            ctx.strokeStyle = color;
+
+            // 2. Update the UI to show which color is selected
+            document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+            el.classList.add('active');
+
+            // 3. Auto-enable pen if it's off when a color is picked
+            if (!penActive) togglePen();
+        }
+
     </script>
+
+
 </body>
 
 </html>

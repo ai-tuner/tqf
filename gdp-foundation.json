@@ -1,0 +1,65 @@
+{
+  "fullNotes": "National Income accounting provides a framework for measuring a country's economic activity. The most fundamental metric is Gross Domestic Product (GDP), which represents the total market value of all final goods and services produced within a country's domestic boundaries during a specific period. To avoid 'double counting,' only 'final' goods are included, while 'intermediate' goods used in production are excluded. The term 'Gross' indicates that the value is calculated before deducting for the wear and tear of assets (depreciation). GDP is strictly location-based; it includes production by foreign companies within the country but excludes production by citizens working abroad. Furthermore, it only accounts for formal market transactions, meaning unpaid household labor and second-hand sales are omitted. Economists distinguish between 'Factor Cost' (the cost of production inputs) and 'Market Price' (which includes product taxes and excludes subsidies) to understand the true value and consumer cost of economic output.",
+  "questions": [
+    {
+      "q": "What is the most basic measure of a country’s economic size?",
+      "a": "Gross Domestic Product (GDP)",
+      "options": ["Total Currency Circulation", "Stock Market Index"],
+      "explanation": "GDP is the standard metric used globally to track the health and size of an economy."
+    },
+    {
+      "q": "Why do we focus on 'Final' goods and services instead of 'Intermediate' ones?",
+      "a": "To avoid double counting",
+      "options": ["To increase the total value", "To simplify tax collection"],
+      "explanation": "The value of intermediate goods is already included in the price of the final product; counting both would artificially inflate the GDP."
+    },
+    {
+      "q": "What is the definition of Gross Domestic Product (GDP)?",
+      "a": "The market value of all final goods and services produced within a country's borders in a year.",
+      "options": ["The total wealth owned by all citizens of a country.", "The sum of all exports minus all imports."],
+      "explanation": "GDP measures the flow of production within a specific geographic territory over a specific time."
+    },
+    {
+      "q": "If a Toyota car is produced in India, is it part of India’s GDP?",
+      "a": "Yes",
+      "options": ["No, it belongs to Japan's GDP", "Only if it is sold to an Indian citizen"],
+      "explanation": "GDP is based on where the production happens (territory), not who owns the company."
+    },
+    {
+      "q": "What does the word 'Gross' signify in GDP?",
+      "a": "Value before deducting depreciation",
+      "options": ["Total value after taxes", "The size of the informal economy"],
+      "explanation": "Gross indicates that the wear and tear (depreciation) of machinery and assets has not yet been subtracted."
+    },
+    {
+      "q": "Does GDP include the value of second-hand goods sold this year?",
+      "a": "No",
+      "options": ["Yes", "Only if sold through a registered dealer"],
+      "explanation": "GDP only counts new production; second-hand goods were already counted in the year they were originally produced."
+    },
+    {
+      "q": "How does the 'Domestic' boundary affect GDP calculation?",
+      "a": "It limits calculation to production within the country’s borders",
+      "options": ["It includes production by citizens living anywhere", "It excludes services and only counts physical goods"],
+      "explanation": "Domestic means the economic activity must take place inside the political or geographic boundaries of the nation."
+    },
+    {
+      "q": "If an Indian citizen works in the USA, is their income part of India’s GDP?",
+      "a": "No",
+      "options": ["Yes", "Only if they send the money back to India"],
+      "explanation": "Since the work is performed outside India's borders, it is part of the USA's GDP, not India's."
+    },
+    {
+      "q": "Does GDP account for unpaid household work or hobbies?",
+      "a": "No",
+      "options": ["Yes, through estimation", "Only if the hobby involves physical tools"],
+      "explanation": "GDP only captures market transactions; non-market activities like housework are generally excluded because they lack a clear market price."
+    },
+    {
+      "q": "What is the difference between 'Market Price' and 'Factor Cost'?",
+      "a": "Market Price includes indirect taxes and excludes subsidies",
+      "options": ["Factor Cost includes inflation while Market Price does not", "Market Price is only used for services"],
+      "explanation": "Factor Cost is what producers receive, while Market Price is what consumers pay after taxes and government subsidies are applied."
+    }
+  ]
+}
