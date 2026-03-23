@@ -109,8 +109,8 @@
         .mobile-nav-wrapper {
             position: fixed;
             bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
+            /* Changed from 50% for better mobile stability */
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -120,7 +120,10 @@
             backdrop-filter: blur(10px);
             padding: 5px 0 calc(5px + env(safe-area-inset-bottom));
             border-top: 1px solid rgba(175, 175, 175, 0.2);
-            z-index: 1000;
+            z-index: 10005;
+            /* Significantly higher than canvas */
+            pointer-events: all;
+            /* Force buttons to be clickable */
         }
 
         .navigator,
@@ -408,19 +411,20 @@
             top: 0;
             left: 0;
             width: 100vw;
-            /* Stops the canvas before the nav bar so buttons remain clickable */
-            height: calc(100vh - 85px);
-            z-index: 9998;
+            /* Physically stop the canvas before it touches the nav bar */
+            height: calc(100vh - 90px);
+            z-index: 5;
+            /* Low positive number */
             pointer-events: none;
-            /* Allows scrolling by default */
+            /* Allows scrolling and clicking when OFF */
             display: block;
-            cursor: crosshair;
-            margin-bottom: 85px;
         }
 
         #drawing-canvas.active {
             pointer-events: all;
             /* Enables drawing mode */
+            z-index: 9999;
+            /* Higher, but still lower than nav-wrapper */
         }
 
         /* Style for the pen button specifically inside the navigator */
@@ -926,24 +930,22 @@
 
         // Resize canvas to fit screen
         function resizeCanvas() {
-    const displayWidth = window.innerWidth;
-    // Match the 85px height reduction from your CSS
-    const displayHeight = window.innerHeight - 85; 
+            // 90px is a safe buffer for mobile nav bars + safe area
+            const navHeight = 90;
 
-    canvas.width = displayWidth;
-    canvas.height = displayHeight;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight - navHeight;
 
-    // Reset styles as they clear on width/height change
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
-    ctx.lineWidth = 3;
+            // Canvas settings reset on resize, so we must re-declare them
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.lineWidth = 3;
 
-    const activeSwatch = document.querySelector('.swatch.active');
-    if (activeSwatch) {
-        // Convert RGB to HEX if necessary or use the style property
-        ctx.strokeStyle = activeSwatch.style.backgroundColor;
-    }
-}
+            const activeSwatch = document.querySelector('.swatch.active');
+            if (activeSwatch) {
+                ctx.strokeStyle = activeSwatch.style.backgroundColor;
+            }
+        }
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
@@ -987,14 +989,18 @@
 
             const rect = canvas.getBoundingClientRect();
 
-            // Get raw coordinates from mouse or touch
+            // Support both mouse and touch
             const clientX = e.clientX || (e.touches && e.touches[0].clientX);
             const clientY = e.clientY || (e.touches && e.touches[0].clientY);
 
-            // Calculate position relative to the canvas's actual position on screen
-            // and scale it based on internal canvas resolution
-            const x = (clientX - rect.left) * (canvas.width / rect.width);
-            const y = (clientY - rect.top) * (canvas.height / rect.height);
+            // If the click happened inside the nav bar area, ignore it
+            if (clientY > rect.bottom) {
+                stopDrawing();
+                return;
+            }
+
+            const x = (clientX - rect.left);
+            const y = (clientY - rect.top);
 
             ctx.lineTo(x, y);
             ctx.stroke();
