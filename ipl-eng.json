@@ -1,100 +1,41 @@
 {
-  "fullNotes": "IPL 2026, the 19th edition of the league, is set to be the longest ever with an expanded 84-match schedule running from March 28 to May 31. The tournament begins at the M. Chinnaswamy Stadium with defending champions Royal Challengers Bengaluru (RCB) facing Sunrisers Hyderabad (SRH). Major pre-season updates include Ishan Kishan leading SRH as interim captain for the injured Pat Cummins and a landmark trade where Sanju Samson joined Chennai Super Kings (CSK) for INR 18 crore, while Ravindra Jadeja returned to the Rajasthan Royals (RR). RR has appointed Riyan Parag as their full-time captain. The season also highlights young prodigies like 14-year-old Vaibhav Sooryavanshi at RR, who recently led India to an U-19 World Cup title.",
+  "fullNotes": "Critical analysis of IPL 2026 highlighting the '300-Hour Trap' for students, the 'Prime Time' scheduling conflict, and the business-centric 'Attention Economy' that leverages publicly-trained athletes for private franchise profit over 65+ days.",
   "questions": [
     {
-      "q": "How much time do you spend watching IPL every day?",
-      "a": "3+ hours",
-      "options": ["1 hour", "2 hours"],
-      "explanation": "If you watch daily, a lot of time gets consumed."
+      "q": "If a student watches all 84 matches of IPL 2026 (approx. 336 hours), this is equivalent to losing how much full-time academic productivity?",
+      "a": "2 months",
+      "options": ["15 days", "1 month", "3.5 months"],
+      "explanation": "Based on a 6-hour school day, 336 hours equals 56 days. This '300-Hour Trap' suggests a two-month daily distraction that no academic curriculum can easily survive."
     },
     {
-      "q": "After the match ends… what do you actually get?",
-      "a": "Timepass",
-      "options": ["Entertainment", "Nothing"],
-      "explanation": "For most people, it's just timepass."
+      "q": "Regarding the 'Prime Time' Conflict (7:30 PM – 11:30 PM), what is the primary ethical concern for the student population?",
+      "a": "Prioritizing 'eyeball-hours' over human capital",
+      "options": [
+        "Encouraging early sleep habits",
+        "Providing necessary stress relief",
+        "Promoting family bonding"
+      ],
+      "explanation": "Scheduling matches during peak study hours suggests a deliberate business strategy to maximize viewer metrics at the expense of student productivity and the nation's human capital."
     },
     {
-      "q": "How many days does IPL run in total?",
-      "a": "65 days",
-      "options": ["30 days", "90 days"],
-      "explanation": "IPL runs for nearly 2 months."
+      "q": "From an 'Attention Economy' perspective, why does the IPL 2026 season span 65+ days with 84 matches?",
+      "a": "To maximize ad-revenue cycles",
+      "options": [
+        "To allow players more rest",
+        "To find the most skilled team",
+        "To accommodate weather changes"
+      ],
+      "explanation": "The length is a calculated move to keep viewers locked into a consumption cycle, treating the audience's time as a product to be sold to advertisers rather than focusing on sporting efficiency."
     },
     {
-      "q": "If you watch daily for 2 months… how much total time is spent?",
-      "a": "100+ hours",
-      "options": ["20 hours", "50 hours"],
-      "explanation": "Watching 3–4 hours daily crosses 100 hours."
-    },
-    {
-      "q": "What can you do in those 100 hours?",
-      "a": "Both",
-      "options": ["Learn a new skill", "Improve your career"],
-      "explanation": "That time can change your life."
-    },
-    {
-      "q": "Who earns money through IPL?",
-      "a": "Both",
-      "options": ["Players", "Companies"],
-      "explanation": "Players and brands both earn money, from your time"
-    },
-    {
-      "q": "What are YOU earning from it?",
-      "a": "Time waste",
-      "options": ["Happiness", "Nothing"],
-      "explanation": "For many, it becomes a waste of time."
-    },
-    {
-      "q": "Are you controlling IPL watching?",
-      "a": "Don't know",
-      "options": ["Yes", "No"],
-      "explanation": "Many people don’t even realize it."
-    },
-    {
-      "q": "What is more important in your life?",
-      "a": "Your time",
-      "options": ["Match result", "Both"],
-      "explanation": "Time never comes back."
-    },
-    {
-      "q": "Do you postpone work to watch matches?",
-      "a": "Sometimes",
-      "options": ["Never", "Yes"],
-      "explanation": "This slowly becomes a habit."
-    },
-    {
-      "q": "What does watching Cricket mostly give you?",
-      "a": "Distraction",
-      "options": ["Happiness", "Habit"],
-      "explanation": "It often distracts your focus."
-    },
-    {
-      "q": "In the end… what should you protect?",
-      "a": "Your time",
-      "options": ["Match score", "Both"],
-      "explanation": "Your time is your future."
-    },
-    {
-      "q": "Is IPL just a sport… or also a business?",
-      "a": "Both",
-      "options": ["Only sport", "Only business"],
-      "explanation": "IPL is both a sport and a big business."
-    },
-    {
-      "q": "Who benefits the most from IPL?",
-      "a": "Companies",
-      "options": ["Viewers", "Both"],
-      "explanation": "Companies earn more through ads and sponsorships."
-    },
-    {
-      "q": "While watching a match… what do you become?",
-      "a": "Customer",
-      "options": ["Player", "Winner"],
-      "explanation": "Viewers are actually the customers."
-    },
-    {
-      "q": "Match results change every day…, But your life changes only when YOU do.",
-      
-      "explanation": "All the Best."
+      "q": "What is the 'Publicity Service' critique regarding private franchises and Indian cricket players?",
+      "a": "Renting publicly-trained talent for private brand building",
+      "options": [
+        "Franchises paying for government academies",
+        "Government players refusing to play for money",
+        "The public receiving dividends from IPL profits"
+      ],
+      "explanation": "Many players are products of government-funded training (like the Ranji Trophy), yet private franchises 'rent' this talent to build billion-dollar brands while the public loses time and productivity."
     }
   ]
 }
