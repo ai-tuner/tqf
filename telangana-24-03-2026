@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "q": "What is the new maximum discount for Telangana govt employees on EVs?",
+      "a": "20%",
+      "options": ["5%", "10%"],
+      "explanation": "The government negotiated with manufacturers like Ola and Ather to offer up to a 20% rebate for employees."
+    },
+    {
+      "q": "Under G.O. Ms. No. 95, a building is 'high-rise' if it reaches what height?",
+      "a": "21 meters",
+      "options": ["15 meters", "18 meters"],
+      "explanation": "The new policy redefined high-rise structures as those 21 meters or taller."
+    },
+    {
+      "q": "What was the average travel speed in Hyderabad in 2025?",
+      "a": "23.4 kmph",
+      "options": ["15.5 kmph", "20.1 kmph"],
+      "explanation": "Speeds improved from 20.1 kmph in 2024 due to better traffic management."
+    },
+    {
+      "q": "Why were there long queues at Hyderabad petrol bunks today?",
+      "a": "Panic buying",
+      "options": ["Fuel shortage", "Price hike"],
+      "explanation": "Despite adequate stocks, rumors led to panic buying and temporary 'no stock' boards."
+    },
+    {
+      "q": "What was the main reason for the protest at Uppal Stadium?",
+      "a": "Neglect of local talent",
+      "options": ["Ticket prices", "Match timing"],
+      "explanation": "Protesters criticized SRH for not promoting enough Telugu-speaking players from Telangana."
+    },
+    {
+      "q": "The SIT is investigating a high-profile drug case in which location?",
+      "a": "Moinabad",
+      "options": ["Gachibowli", "Banjara Hills"],
+      "explanation": "The investigation follows a party at a farmhouse in Moinabad where several tested positive for narcotics."
+    }
+  ]
+}
