@@ -1,7 +1,16 @@
 {
     "topics": [
         
-        {
+        
+{
+            "title": "IPL Telugu",
+            "file": "ipl-tel.json"
+        },
+{
+            "title": "IPL English",
+            "file": "ipl-eng.json"
+        },
+{
             "title": "Defining the Foundation (GDP)",
             "file": "gdp-foundation.json"
         },
