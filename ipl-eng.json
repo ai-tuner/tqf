@@ -1,0 +1,109 @@
+{
+  "questions": [
+    {
+      "q": "How much time do you spend watching IPL every day?",
+      "a": "3+ hours",
+      "options": ["1 hour", "2 hours", "3+ hours"],
+      "explanation": "If you watch daily, a lot of time gets consumed."
+    },
+    {
+      "q": "After the match ends… what do you actually get?",
+      "a": "Timepass",
+      "options": ["Entertainment", "Timepass", "Nothing"],
+      "explanation": "For most people, it's just timepass."
+    },
+    {
+      "q": "How many days does IPL run in total?",
+      "a": "65 days",
+      "options": ["30 days", "65 days", "90 days"],
+      "explanation": "IPL runs for nearly 2 months."
+    },
+    {
+      "q": "If you watch daily for 2 months… how much total time is spent?",
+      "a": "100+ hours",
+      "options": ["20 hours", "50 hours", "100+ hours"],
+      "explanation": "Watching 3–4 hours daily crosses 100 hours."
+    },
+    {
+      "q": "What can you do in those 100 hours?",
+      "a": "Both",
+      "options": ["Learn a new skill", "Improve your career", "Both"],
+      "explanation": "That time can change your life."
+    },
+    {
+      "q": "Who earns money through IPL?",
+      "a": "Both",
+      "options": ["Players", "Companies", "Both"],
+      "explanation": "Players and brands both earn money."
+    },
+    {
+      "q": "What are YOU earning from it?",
+      "a": "Time waste",
+      "options": ["Happiness", "Nothing", "Time waste"],
+      "explanation": "For many, it becomes a waste of time."
+    },
+    {
+      "q": "Are you controlling IPL watching?",
+      "a": "Don't know",
+      "options": ["Yes", "No", "Don't know"],
+      "explanation": "Many people don’t even realize it."
+    },
+    {
+      "q": "What is more important in your life?",
+      "a": "Your time",
+      "options": ["Match result", "Your time", "Both"],
+      "explanation": "Time never comes back."
+    },
+    {
+      "q": "Do you postpone work to watch matches?",
+      "a": "Sometimes",
+      "options": ["Never", "Sometimes", "Yes"],
+      "explanation": "This slowly becomes a habit."
+    },
+    {
+      "q": "What does watching IPL mostly give you?",
+      "a": "Distraction",
+      "options": ["Happiness", "Habit", "Distraction"],
+      "explanation": "It often distracts your focus."
+    },
+    {
+      "q": "In the end… what should you protect?",
+      "a": "Your time",
+      "options": ["Match score", "Your time", "Both"],
+      "explanation": "Your time is your future."
+    },
+    {
+      "q": "Is IPL just a sport… or also a business?",
+      "a": "Both",
+      "options": ["Only sport", "Only business", "Both"],
+      "explanation": "IPL is both a sport and a big business."
+    },
+    {
+      "q": "Who benefits the most from IPL?",
+      "a": "Companies",
+      "options": ["Viewers", "Companies", "Both"],
+      "explanation": "Companies earn more through ads and sponsorships."
+    },
+    {
+      "q": "While watching a match… what do you become?",
+      "a": "Customer",
+      "options": ["Player", "Customer", "Winner"],
+      "explanation": "Viewers are actually the customers."
+    },
+    {
+      "q": "Who pays for your attention in IPL?",
+      "a": "Brands",
+      "options": ["You", "Brands", "Players"],
+      "explanation": "Companies buy your attention through ads."
+    },
+    {
+      "q": "What do you see the most during a match?",
+      "a": "Ads",
+      "options": ["Only game", "Ads", "Nothing"],
+      "explanation": "Ads appear frequently between overs."
+    },
+    {
+      "q": "Match results change every day…, But your life changes only when YOU do."
+    }
+  ]
+}
