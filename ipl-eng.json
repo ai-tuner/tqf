@@ -1,4 +1,5 @@
 {
+  "fullNotes": "IPL 2026, the 19th edition of the league, is set to be the longest ever with an expanded 84-match schedule running from March 28 to May 31. The tournament begins at the M. Chinnaswamy Stadium with defending champions Royal Challengers Bengaluru (RCB) facing Sunrisers Hyderabad (SRH). Major pre-season updates include Ishan Kishan leading SRH as interim captain for the injured Pat Cummins and a landmark trade where Sanju Samson joined Chennai Super Kings (CSK) for INR 18 crore, while Ravindra Jadeja returned to the Rajasthan Royals (RR). RR has appointed Riyan Parag as their full-time captain. The season also highlights young prodigies like 14-year-old Vaibhav Sooryavanshi at RR, who recently led India to an U-19 World Cup title.",
   "questions": [
     {
       "q": "How much time do you spend watching IPL every day?",
@@ -34,7 +35,7 @@
       "q": "Who earns money through IPL?",
       "a": "Both",
       "options": ["Players", "Companies"],
-      "explanation": "Players and brands both earn money."
+      "explanation": "Players and brands both earn money, from your time"
     },
     {
       "q": "What are YOU earning from it?",
@@ -61,7 +62,7 @@
       "explanation": "This slowly becomes a habit."
     },
     {
-      "q": "What does watching IPL mostly give you?",
+      "q": "What does watching Cricket mostly give you?",
       "a": "Distraction",
       "options": ["Happiness", "Habit"],
       "explanation": "It often distracts your focus."
@@ -89,18 +90,6 @@
       "a": "Customer",
       "options": ["Player", "Winner"],
       "explanation": "Viewers are actually the customers."
-    },
-    {
-      "q": "Who pays for your attention in IPL?",
-      "a": "Brands",
-      "options": ["You", "Players"],
-      "explanation": "Companies buy your attention through ads."
-    },
-    {
-      "q": "What do you see the most during a match?",
-      "a": "Ads",
-      "options": ["Only game", "Nothing"],
-      "explanation": "Ads appear frequently between overs."
     },
     {
       "q": "Match results change every day…, But your life changes only when YOU do."
