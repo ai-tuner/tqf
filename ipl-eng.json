@@ -1,41 +1,29 @@
 {
-  "fullNotes": "Critical analysis of IPL 2026 highlighting the '300-Hour Trap' for students, the 'Prime Time' scheduling conflict, and the business-centric 'Attention Economy' that leverages publicly-trained athletes for private franchise profit over 65+ days.",
+  "fullNotes": "IPL 2026: The Business of Attention. A critical look at the '300-Hour Trap' for students, the monetization of peak study hours, and the use of publicly-trained athletes for private profit over an 84-match season.",
   "questions": [
     {
-      "q": "If a student watches all 84 matches of IPL 2026 (approx. 336 hours), this is equivalent to losing how much full-time academic productivity?",
-      "a": "2 months",
-      "options": ["15 days", "1 month", "3.5 months"],
-      "explanation": "Based on a 6-hour school day, 336 hours equals 56 days. This '300-Hour Trap' suggests a two-month daily distraction that no academic curriculum can easily survive."
+      "q": "IPL 2026 = 336 hours of screen time! For a student, this equals lose of?",
+      "a": "2 Months of Full-Time Schooling",
+      "options": ["10-Day Vacation", "1-Month Coaching", "Just Entertainment"],
+      "explanation": "At 6 hours of study/day, 84 matches kill 56 days of productivity. That is the '300-Hour Trap'!"
     },
     {
-      "q": "Regarding the 'Prime Time' Conflict (7:30 PM – 11:30 PM), what is the primary ethical concern for the student population?",
-      "a": "Prioritizing 'eyeball-hours' over human capital",
-      "options": [
-        "Encouraging early sleep habits",
-        "Providing necessary stress relief",
-        "Promoting family bonding"
-      ],
-      "explanation": "Scheduling matches during peak study hours suggests a deliberate business strategy to maximize viewer metrics at the expense of student productivity and the nation's human capital."
+      "q": "7:30 PM - 11:30 PM 'Prime Time'. Is it for Cricket or for selling your time?",
+      "a": "Selling student attention to advertisers",
+      "options": ["Player recovery", "Family bonding", "Better sleep habits"],
+      "explanation": "Matches occupy 'Peak Retention' hours. It prioritizes 'Ad-Revenue' over the nation's human capital."
     },
     {
-      "q": "From an 'Attention Economy' perspective, why does the IPL 2026 season span 65+ days with 84 matches?",
-      "a": "To maximize ad-revenue cycles",
-      "options": [
-        "To allow players more rest",
-        "To find the most skilled team",
-        "To accommodate weather changes"
-      ],
-      "explanation": "The length is a calculated move to keep viewers locked into a consumption cycle, treating the audience's time as a product to be sold to advertisers rather than focusing on sporting efficiency."
+      "q": "65 Days & 84 Matches! Is this a Sport or a Revenue Cycle?",
+      "a": "A business strategy to milk viewership",
+      "options": ["Talent scouting", "Game promotion", "Fitness testing"],
+      "explanation": "More matches mean more ad-slots and subscription renewals. This is 'Attention Economy,' not just sport."
     },
     {
-      "q": "What is the 'Publicity Service' critique regarding private franchises and Indian cricket players?",
-      "a": "Renting publicly-trained talent for private brand building",
-      "options": [
-        "Franchises paying for government academies",
-        "Government players refusing to play for money",
-        "The public receiving dividends from IPL profits"
-      ],
-      "explanation": "Many players are products of government-funded training (like the Ranji Trophy), yet private franchises 'rent' this talent to build billion-dollar brands while the public loses time and productivity."
+      "q": "Publicly-trained heroes, private-brand profits. Is the 'Publicity Service' fair?",
+      "a": "No, it's renting public talent for private gain",
+      "options": ["Yes, it helps players", "Government makes profit", "No one loses anything"],
+      "explanation": "Stars built on taxpayer-funded domestic circuits are 'rented' by franchises to build billion-dollar private brands."
     }
   ]
 }
